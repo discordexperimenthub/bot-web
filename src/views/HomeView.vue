@@ -7,9 +7,6 @@
                 Experiment Hub is an Open Source Discord Bot. <BotTag verified /> <!--  :textSize="'4rem'" -->
             </div>
 
-                    <!-- Langbutton -->
-                    <languageSwitch> </languageSwitch>
-
             <div class="my-4">
                 <!-- Buttons -->
                 <a href="https://discord.com/api/oauth2/authorize?client_id=1078340529932222505&permissions=536882192&scope=applications.commands%20bot"
@@ -30,7 +27,7 @@
         <img src="../assets/img/servers.top.svg" class="fill-deh-server-slider">
         <!-- top-10 reltativ -> moves the svg down but i should jsut create a new wave -->
         <section class="w-full bg-deh-server-slider">
-            <div class="font-bold text-deh-white text-center text-5xl relative -top-10">
+            <div class="font-bold text-deh-white text-center text-5xl relative lg:-top-10">
                 <p class="underline">Servers</p>
                 <div class="font-normal no-underline text-2xl">Some of the great Communitys that using Expiremtn Hub Bot
                 </div>
@@ -79,8 +76,6 @@
 import NavBar from '../components/Site/NavBar.vue';
 import Footer from '../components/Site/Footer.vue';
 import BotTag from '../components/other/BotTag.vue';
-
-import languageSwitch from '../components/languageSwitch.vue';
 
 const dummyMarqueeItems = [
     {

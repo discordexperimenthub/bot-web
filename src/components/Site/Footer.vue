@@ -20,9 +20,15 @@
                 </ul>
             </div>
 
+            <languageSwitch />
+
             <div>
                 Website: © 2023 Voroniyx
             </div>
         </div>
     </div>
 </template>
+
+<script setup lang="ts">
+import languageSwitch from '../languageSwitch.vue';
+</script>

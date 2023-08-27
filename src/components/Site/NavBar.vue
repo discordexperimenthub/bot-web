@@ -18,17 +18,17 @@
                 <ul class="flex flex-col lg:flex-row list-none lg:ml-auto navbar-ul-item">
                     <li class="navbar-li-item">
                         <a class="px-3 py-2 flex items-center text-xs uppercase font-bold hover:opacity-75">
-                            <span class="ml-2 lg:drop-shadow-[0_2px_20px_rgba(84,97,242,1)] text-xl">{{ $t('navbar.invite') }}</span>
+                            <span class="ml-2 lg:drop-shadow-[0_2px_20px_rgba(84,97,242,1)] text-xl">{{ $t('navfoo.invite') }}</span>
                         </a>
                     </li>
                     <li class="navbar-li-item">
                         <a class="px-3 py-2 flex items-center text-xs uppercase font-bold hover:opacity-75">
-                            <span class="ml-2 lg:drop-shadow-[0_2px_20px_rgba(84,97,242,1)] text-xl">{{ $t('navbar.support') }}</span>
+                            <span class="ml-2 lg:drop-shadow-[0_2px_20px_rgba(84,97,242,1)] text-xl">{{ $t('navfoo.support') }}</span>
                         </a>
                     </li>
                     <li class="navbar-li-item">
                         <a class="px-3 py-2 flex items-center text-xs uppercase font-bold hover:opacity-75">
-                            <span class="ml-2 lg:drop-shadow-[0_2px_20px_rgba(84,97,242,1)] text-xl">{{ $t('navbar.docs') }}</span>
+                            <span class="ml-2 lg:drop-shadow-[0_2px_20px_rgba(84,97,242,1)] text-xl">{{ $t('navfoo.docs') }}</span>
                         </a>
                     </li>
                 </ul>
