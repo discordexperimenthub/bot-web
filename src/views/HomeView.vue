@@ -1,9 +1,3 @@
-<!-- 
-
-    TODO: Everewhere where Experiment Hub Bot ist i need to replace the Bot with an Svg that lays in another .vue and i only put a <Bot /> behind the Name. And if its verified i add the Tick
-
- -->
-
 <template>
     <NavBar />
     <main class="bg-deh-black min-h-screen pt-28">
@@ -12,6 +6,9 @@
             <div>
                 Experiment Hub is an Open Source Discord Bot. <BotTag verified /> <!--  :textSize="'4rem'" -->
             </div>
+
+                    <!-- Langbutton -->
+                    <languageSwitch> </languageSwitch>
 
             <div class="my-4">
                 <!-- Buttons -->
@@ -82,6 +79,8 @@
 import NavBar from '../components/Site/NavBar.vue';
 import Footer from '../components/Site/Footer.vue';
 import BotTag from '../components/other/BotTag.vue';
+
+import languageSwitch from '../components/languageSwitch.vue';
 
 const dummyMarqueeItems = [
     {

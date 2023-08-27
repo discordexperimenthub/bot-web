@@ -1,4 +1,4 @@
-import { i18n, locales} from "./index";
+import { i18n, locales, locale } from "./index";
 import { nextTick } from "vue";
 
 const Translation = {
@@ -36,7 +36,7 @@ const Translation = {
   },
 
   isLocaleSupported(locale: string) {
-    return Translation.supportedLocales.includes(locale);
+    return Translation.supportedLocales.find((la) => la.code === locale);
   },
 
   getUserLocale() {

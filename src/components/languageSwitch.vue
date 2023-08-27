@@ -1,8 +1,8 @@
 <template>
-    <select @change="switchLanguage" class="bg-deh-footer border-deh-border rounded">
+    <select @change="switchLanguage" class="bg-deh-footer border-deh-border rounded text-deh-white p-1">
         <option v-for="sLocale in supportedLocales" :key="`locale-${sLocale.code}`" :value="sLocale.code"
-            :selected="locale === sLocale">
-            {{ sLocale.flag }}
+            :selected="locale === sLocale.code">
+            {{  sLocale.flag+  ' '+ sLocale.name }}
         </option>
     </select>
 </template>

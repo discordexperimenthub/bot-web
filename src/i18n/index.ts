@@ -10,13 +10,19 @@ const languages = {
 };
 
 export type locales = keyof typeof languages;
+export interface locale {
+  code: string;
+  flag: string;
+  name: string;
+}
 
-export const locales = [
+export const locales: locale[] = [
   { code: "de-DE", flag: "🇩🇪", name: "Deutsch" },
   { code: "en-US", flag: "🇺🇸", name: "English (US)" },
 ];
 
 export const i18n = createI18n({
+  locale: window.navigator.language,
   fallbackLocale: "en-US",
   legacy: false,
   globalInjection: true,
@@ -27,4 +33,3 @@ export const i18n = createI18n({
   ),
   runtimeOnly: false,
 });
-
