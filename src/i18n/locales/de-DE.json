@@ -3,5 +3,12 @@
         "support":"Support",
         "invite":"Einladen",
         "docs":"Dokumentation"
+    },
+    "servers": {
+        "server":"Server",
+        "desc":"{c} Communitys nutzen Experiment Hub Bot"
+    },
+    "home": {
+        "description":""
     }
 }

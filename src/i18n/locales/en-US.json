@@ -3,5 +3,9 @@
         "support":"Support",
         "invite":"Invite",
         "docs":"Documentation"
+    },
+    "servers": {
+        "server":"Servers",
+        "desc":"{c} great communitys are using Experiment Hub"
     }
 }
