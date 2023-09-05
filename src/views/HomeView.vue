@@ -68,6 +68,7 @@
             <div class="font-bold text-deh-white text-center text-5xl underline">
                 Features
             </div>
+            <Features />
         </section>
 
         <img src="../assets/img/footer.top.svg" class="fill-deh-server-slider">
@@ -79,6 +80,7 @@
 import NavBar from '../components/Site/NavBar.vue';
 import Footer from '../components/Site/Footer.vue';
 import BotTag from '../components/other/BotTag.vue';
+import Features from '../components/Site/Features.vue';
 
 type marqeeObject = {
     img: string,
