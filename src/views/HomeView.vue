@@ -64,7 +64,7 @@
         </section>
         <img src="../assets/img/servers.buttom.svg" class="fill-deh-server-slider">
 
-        <section class="md:min-h-[11rem] md:h-44" mt-4>
+        <section class="md:min-h-[11rem] mt-4" >
             <div class="font-bold text-deh-white text-center text-5xl underline">
                 Features
             </div>
