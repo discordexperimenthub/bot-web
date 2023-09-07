@@ -7,5 +7,22 @@
     "servers": {
         "server":"Servers",
         "desc":"{c} great communitys are using Experiment Hub"
+    },
+    "home": {
+        "description":""
+    },
+    "feature": {
+        "automod": {
+            "desc": "Be one of the first to moderate your server with AI",
+            "title": "AI Automod"
+        },
+        "home": {
+            "desc": "Let your members not miss any events by displaying important news on the home page",
+            "title": "Home"
+        },
+        "msgReminder": {
+            "desc": "The way to remember your plans",
+            "title": "News Reminders"
+        }
     }
 }

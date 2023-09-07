@@ -10,5 +10,19 @@
     },
     "home": {
         "description":""
+    },
+    "feature": {
+        "automod": {
+            "desc":"Gehöre zu den ersten, die Ihren Server mit AI moderieren",
+            "title":"KI Automod"
+        },
+        "home": {
+            "desc":"Lasse deine Mitglieder keinen Ereignisse mehr verpassen, in dem du in wichtige Nachrichten auf der Startseite anzeigst",
+            "title":"Startseite"
+        },
+        "msgReminder": {
+            "desc":"Der Weg, mit dem du dich an deine Pläne errinerst",
+            "title":"Nachrichten Errinnerungen"
+        }
     }
 }
