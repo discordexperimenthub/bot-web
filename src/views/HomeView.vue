@@ -6,8 +6,10 @@
 
             <img src="/logo.png" class="lg:w-[15%] m-2 p-2">
 
-            <div class="p-2 m-1 text-center inline-flex">
-                <span class="mr-1 font-bold text-2xl text-white">Experiment Hub is an Open Source Discord</span> <BotTag />
+            <div class="p-2 m-1 text-center font-bold text-white">
+                Imagine a place... for accessing all experiments!
+                <br>
+                <a href="https://discord.gg/experiments" class="text-deh-main">https://discord.gg/experiments</a>
             </div>
 
             <div class="my-4">
@@ -16,12 +18,6 @@
                     class="bg-deh-main p-1 rounded text-deh-white font-bold text-3xl mx-2">
                     <button>
                         Invite
-                    </button>
-                </a>
-                <a href="https://discord.com/api/oauth2/authorize?client_id=1078340529932222505&permissions=536882192&scope=applications.commands%20bot"
-                    class="bg-deh-main p-1 rounded text-deh-white font-bold text-3xl">
-                    <button>
-                        Server
                     </button>
                 </a>
             </div>
@@ -34,7 +30,7 @@
                 <p class="underline">Servers</p>
                 <div class="font-normal no-underline text-2xl">{{ $t("servers.desc", {c:servers})}}</div>
             </div>
-            <template v-if="dummyMarqueeItems.length > 0">
+            <template v-if="showDetaildServer && dummyMarqueeItems.length > 0">
                 <div class="mx-8 flex flex-col items-center z-[2]">
                     <Vue3Marquee :clone="true" :duration="25" :direction="'reverse'" class="lg:max-w-7xl" :gradient="true"
                         :gradient-color="[25, 25, 25]" gradient-length="15%">
@@ -81,7 +77,6 @@
 <script setup lang="ts">
 import NavBar from '../components/Site/NavBar.vue';
 import Footer from '../components/Site/Footer.vue';
-import BotTag from '../components/other/BotTag.vue';
 import Features from '../components/Site/Features.vue';
 
 type marqeeObject = {
@@ -92,6 +87,8 @@ type marqeeObject = {
     members: number,
     invite: string
 }
+
+
 
 const dummyMarqueeItems: marqeeObject[] = [
     {
@@ -143,6 +140,7 @@ export default {
     data() {
         return {
             servers: "Many",
+            showDetaildServer: false,
             loading: false,
         }
     },

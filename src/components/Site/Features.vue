@@ -2,7 +2,7 @@
   <div class="m-8">
     <div class="invisible lg:visible flex justify-center align-middle" v-if="!isMobile">
       <div class="lg:w-[50%] w-[95%]">
-        <Carousel :autoplay="3500" :wrap-around="true" :items-to-show="1.5">
+        <Carousel :autoplay="3500" :wrap-around="true" :items-to-show="1">
           <Slide v-for="(feature, index) in Feautures" :key="index">
             <div
               class="carousel__item p-8 w-full h-full rounded-lg bg-opacity-40 bg-deh-server-slider backdrop-blur-lg m-2"
@@ -24,7 +24,7 @@
                 </span>
               </div>
 
-              <span class="text-deh-white text-xl">
+                <span class="text-deh-white text-xl text-center">
                 <!-- Description -->
                 {{ $t(feature.description) }}
               </span>
@@ -44,6 +44,7 @@
 
           <template #addons>
             <Navigation class="rounded-lg" />
+            <Pagination />
           </template>
         </Carousel>
       </div>
@@ -107,7 +108,7 @@
 
 <script setup lang="ts">
 import { onBeforeMount, onMounted, onUpdated, ref } from "vue";
-import { Carousel, Slide, Navigation } from "vue3-carousel";
+import { Carousel, Slide, Navigation, Pagination } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 
 /**
@@ -148,7 +149,7 @@ const Feautures: FeatureData[] = [
     title: "feature.home.title",
     image: {
       height: 24,
-      url: "/home.png",
+      url: "/home.svg",
       widht: 24,
     },
     thumbnail: {
@@ -160,7 +161,7 @@ const Feautures: FeatureData[] = [
     title: "feature.msgReminder.title",
     image: {
       height: 24,
-      url: "/clock.png",
+      url: "/reminder.svg",
       widht: 24,
     },
     thumbnail: {
