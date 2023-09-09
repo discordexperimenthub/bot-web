@@ -6,9 +6,8 @@
 
             <img src="/logo.png" class="lg:w-[15%] m-2 p-2">
 
-            <div class="p-2 m-1 text-center">
-                Experiment Hub is an Open Source Discord
-                <BotTag verified /> <!--  :textSize="'4rem'" -->
+            <div class="p-2 m-1 text-center inline-flex">
+                <span class="mr-1 font-bold text-2xl text-white">Experiment Hub is an Open Source Discord</span> <BotTag />
             </div>
 
             <div class="my-4">
@@ -67,7 +66,7 @@
         </section>
         <img src="../assets/img/servers.buttom.svg" class="fill-deh-server-slider">
 
-        <section class="md:min-h-[11rem] mt-4" >
+        <section class="mt-4">
             <div class="font-bold text-deh-white text-center text-5xl underline">
                 Features
             </div>

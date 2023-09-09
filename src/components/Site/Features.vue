@@ -1,15 +1,11 @@
 <template>
   <div class="m-8">
-    <div class="flex justify-center align-middle rounded-lg">
-      <section class="lg:w-[50%] w-[95%] rounded-lg">
-        <Carousel :autoplay="3500" class="rounded-lg">
-          <Slide
-            v-for="(feature, index) in Feautures"
-            :key="index"
-            class="rounded-lg"
-          >
+    <div class="invisible lg:visible flex justify-center align-middle" v-if="!isMobile">
+      <div class="lg:w-[50%] w-[95%]">
+        <Carousel :autoplay="3500" :wrap-around="true" :items-to-show="1.5">
+          <Slide v-for="(feature, index) in Feautures" :key="index">
             <div
-              class="carousel__item p-8 w-full rounded-lg bg-opacity-40 bg-deh-server-slider backdrop-blur-lg"
+              class="carousel__item p-8 w-full h-full rounded-lg bg-opacity-40 bg-deh-server-slider backdrop-blur-lg m-2"
             >
               <div class="font-bold text-3xl p-4">
                 <!-- Title -->
@@ -27,24 +23,21 @@
                   BETA
                 </span>
               </div>
-              <div>
-                <!-- Content -->
-                <span class="text-deh-white text-xl">
-                  <!-- Description -->
-                  {{ $t(feature.description) }}
-                </span>
 
+              <span class="text-deh-white text-xl">
+                <!-- Description -->
+                {{ $t(feature.description) }}
+              </span>
+
+              <div class="flex justify-center align-middle">
                 <!-- Image -->
                 <a
-                    :href="feature.thumbnail.url"
-                    target="_blank"
-                    class="justify-center align-middle flex mt-2 "
-                  >
-                    <img
-                      :src="feature.thumbnail.url"
-                      class="rounded-xl "
-                    />
-                  </a>
+                  :href="feature.thumbnail.url"
+                  target="_blank"
+                  class="flex mt-2 justify-center align-middle"
+                >
+                  <img :src="feature.thumbnail.url" class="rounded-xl" />
+                </a>
               </div>
             </div>
           </Slide>
@@ -53,7 +46,44 @@
             <Navigation class="rounded-lg" />
           </template>
         </Carousel>
-      </section>
+      </div>
+    </div>
+
+    <div v-else>
+      <template v-for="(feature, _) in Feautures">
+        <div class="font-bold text-3xl p-4">
+          <!-- Title -->
+          <img
+            :src="feature.image.url"
+            class="inline-flex w-[32px] h-[32px] mt-[0px] mr-1"
+          />
+          <span class="underline underline-offset-2 text-white">{{
+            $t(feature.title)
+          }}</span>
+          <span
+            v-if="feature.beta"
+            class="text-deh-white bg-deh-main p-[2px] pr-[6px] mx-1 text-start text-base rounded"
+          >
+            BETA
+          </span>
+        </div>
+
+        <span class="text-deh-white text-xl">
+          <!-- Description -->
+          {{ $t(feature.description) }}
+        </span>
+
+        <div class="flex justify-center align-middle">
+          <!-- Image -->
+          <a
+            :href="feature.thumbnail.url"
+            target="_blank"
+            class="flex mt-2 justify-center align-middle"
+          >
+            <img :src="feature.thumbnail.url" class="rounded-xl" />
+          </a>
+        </div>
+      </template>
     </div>
   </div>
 </template>
@@ -76,6 +106,7 @@
 </style>
 
 <script setup lang="ts">
+import { onBeforeMount, onMounted, onUpdated, ref } from "vue";
 import { Carousel, Slide, Navigation } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 
@@ -138,4 +169,18 @@ const Feautures: FeatureData[] = [
     beta: false,
   },
 ];
+
+const isMobile = ref(true);
+
+onBeforeMount(() => {
+  isMobile.value = window.innerWidth < 768;
+})
+
+onUpdated(() => {
+  isMobile.value = window.innerWidth < 768;
+})
+
+onMounted(() => {
+  isMobile.value = window.innerWidth < 768;
+})
 </script>
