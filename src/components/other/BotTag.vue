@@ -1,6 +1,6 @@
 <template>
-    <span v-if="verified" class="discord-bot-tag text-white" :class="'text-[' + textSize + ']'">
-        Bot
+    <span class="discord-bot-tag text-white" :class="'text-[' + textSize + ']'">
+        <span v-if="verified">✔️</span> Bot
     </span>
 </template>
 

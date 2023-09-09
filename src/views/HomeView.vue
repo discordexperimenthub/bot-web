@@ -3,8 +3,11 @@
     <main class="bg-deh-black min-h-screen pt-28">
         <section class="w-full mb-28 flex flex-col items-center">
             <!-- Landing -->
-            <div>
-                Experiment Hub is an Open Source Discord Bot.
+
+            <img src="/logo.png" class="lg:w-[15%] m-2 p-2">
+
+            <div class="p-2 m-1 text-center">
+                Experiment Hub is an Open Source Discord
                 <BotTag verified /> <!--  :textSize="'4rem'" -->
             </div>
 
