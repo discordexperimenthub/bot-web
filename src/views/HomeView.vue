@@ -6,6 +6,8 @@
 
             <img src="/logo.png" class="lg:w-[15%] m-2 p-2">
 
+            <Automod/>
+
             <div class="p-2 m-1 text-center font-bold text-white">
                 Imagine a place... for accessing all experiments!
                 <br>
@@ -28,7 +30,7 @@
         <section class="w-full bg-deh-server-slider">
             <div class="font-bold text-deh-white text-center text-5xl relative lg:-top-10">
                 <p class="underline">Servers</p>
-                <div class="font-normal no-underline text-2xl">{{ $t("servers.desc", {c:servers})}}</div>
+                <div class="font-normal no-underline text-2xl">{{ $t("servers.desc", { c: servers }) }}</div>
             </div>
             <template v-if="showDetaildServer && dummyMarqueeItems.length > 0">
                 <div class="mx-8 flex flex-col items-center z-[2]">
@@ -78,6 +80,7 @@
 import NavBar from '../components/Site/NavBar.vue';
 import Footer from '../components/Site/Footer.vue';
 import Features from '../components/Site/Features.vue';
+import Automod from '../components/discordComponents/automod.vue';
 
 type marqeeObject = {
     img: string,

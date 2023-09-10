@@ -1,4 +1,4 @@
-import { i18n, locales, locale } from "./index";
+import { i18n, locales } from "./index";
 import { nextTick } from "vue";
 
 const Translation = {

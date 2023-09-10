@@ -1,4 +1,4 @@
-import { createI18n, useI18n } from "vue-i18n";
+import { createI18n } from "vue-i18n";
 
 import datetimeFormats from "./rules/datetime";
 import en from "./locales/en-US.json";
