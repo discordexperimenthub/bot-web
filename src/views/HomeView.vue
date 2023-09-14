@@ -6,8 +6,6 @@
 
             <img src="/logo.png" class="lg:w-[15%] m-2 p-2">
 
-            <Automod/>
-
             <div class="p-2 m-1 text-center font-bold text-white">
                 Imagine a place... for accessing all experiments!
                 <br>
@@ -80,7 +78,6 @@
 import NavBar from '../components/Site/NavBar.vue';
 import Footer from '../components/Site/Footer.vue';
 import Features from '../components/Site/Features.vue';
-import Automod from '../components/discordComponents/automod.vue';
 
 type marqeeObject = {
     img: string,
@@ -90,8 +87,6 @@ type marqeeObject = {
     members: number,
     invite: string
 }
-
-
 
 const dummyMarqueeItems: marqeeObject[] = [
     {
@@ -148,6 +143,7 @@ export default {
         }
     },
     methods: {
+        
         getPosts() {
             fetch("https://japi.rest/discord/v1/application/1078340529932222505").then(async (req) => {
                 if (req.ok) {
