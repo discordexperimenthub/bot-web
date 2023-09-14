@@ -7,6 +7,7 @@
             <img src="/logo.png" class="lg:w-[15%] m-2 p-2">
 
             <Automod/>
+            <Home />
 
             <div class="p-2 m-1 text-center font-bold text-white">
                 Imagine a place... for accessing all experiments!
@@ -80,7 +81,9 @@
 import NavBar from '../components/Site/NavBar.vue';
 import Footer from '../components/Site/Footer.vue';
 import Features from '../components/Site/Features.vue';
+
 import Automod from '../components/discordComponents/automod.vue';
+import Home from '../components/discordComponents/home.vue';
 
 type marqeeObject = {
     img: string,
