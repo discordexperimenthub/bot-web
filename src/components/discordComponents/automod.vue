@@ -1,5 +1,5 @@
 <template>
-  <discord-messages class="test">
+  <discord-messages>
     <discord-message profile="dehBot">
       <discord-command
         slot="reply"
@@ -14,7 +14,7 @@
       >
         <discord-embed-description slot="description">
           <img src="/automod.png" height="22" width="22" class="inline-flex" />
-          <span class="font-bold ml-1 align-middle">{{ "automod title" }}</span
+          <span class="font-bold ml-1 align-middle">{{ "Automod AI (Experimental)" }}</span
           ><br />
           <img src="/enabled.svg" height="16" width="16" class="inline-flex" />
           <span class="align-middle"> Enabled</span><br />
@@ -69,7 +69,7 @@
         
         </discord-embed-description>
 
-        <discord-embed-footer slot="footer" footer-image="/automod.png">
+        <discord-embed-footer slot="footer" footer-image="/logo.png">
           Made with ❤️ by discord.gg/experiments
         </discord-embed-footer>
       </discord-embed>
