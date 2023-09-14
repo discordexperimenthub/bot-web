@@ -1,5 +1,5 @@
 <template>
-  <discord-messages class="test">
+  <discord-messages>
     <discord-message profile="voronWebhook"> 
         <img src="/feature.svg" height="22" width="22" class="inline-flex" />
         <span class="align-middle text-blue-500 font-bold test-xl ml-1 hover:cursor-pointer">Featured Post</span>
@@ -20,33 +20,85 @@
             <span class="code-scopeName">List</span>
             <span> {{ "<T> {" }} </span>
             <br>
-            <span class="code-scopeName">&nbsp;&nbsp;get</span> <!-- TODO unsichbares zeichen fürs einrücken  -->
+            <span class="code-scopeName">&nbsp;&nbsp;get</span>
             <span>: (key: AllowdTypes) => T;</span>
             <br>
-            <span class="code-scopeName">&nbsp;&nbsp;getCount</span> <!-- TODO unsichbares zeichen fürs einrücken  -->
+            <span class="code-scopeName">&nbsp;&nbsp;getCount</span>
             <span>: (count:<span class="code-type"> number</span>) => T;</span>
             <br>
-            <span class="code-scopeName">&nbsp;&nbsp;getAll</span> <!-- TODO unsichbares zeichen fürs einrücken  -->
+            <span class="code-scopeName">&nbsp;&nbsp;getAll</span>
             <span>: () => <span class="code-scopeName">Array</span>{{ "<T>;" }}</span>
             <br>
-            <span class="code-scopeName">&nbsp;&nbsp;set</span> <!-- TODO unsichbares zeichen fürs einrücken  -->
+            <span class="code-scopeName">&nbsp;&nbsp;set</span>
             <span>: (key:AllowdTypes, value: T) => T;</span>
             <br>
-            <span class="code-scopeName">&nbsp;&nbsp;remove</span> <!-- TODO unsichbares zeichen fürs einrücken  -->
+            <span class="code-scopeName">&nbsp;&nbsp;remove</span> 
             <span>: (key:AllowdTypes) => <span class="code-type">boolean</span>;</span>
             <br>
-            <span class="code-scopeName">&nbsp;&nbsp;removeAll</span> <!-- TODO unsichbares zeichen fürs einrücken  -->
+            <span class="code-scopeName">&nbsp;&nbsp;removeAll</span> 
             <span>: () => <span class="code-type">number</span>;</span>
             <br>
             <span>};</span>
         </div>
         <br>
-        Just found that in an old File. Was one if my first compiled <code class="p-[1px] rounded bg-[#2b2d31]">.ts</code> files
+        Just found that in an old project. Was one if my first compiled <code class="p-[1px] rounded bg-[#2b2d31]">.ts</code> files
         <br>
         <!-- <span class="command">/test</span> -->
     </discord-message>
 
-    <discord-message profile="dehBotWebhook"> </discord-message>
+    <discord-message profile="dehBotWebhook"> 
+        <img src="/feature.svg" height="22" width="22" class="inline-flex" />
+        <span class="align-middle text-blue-500 font-bold test-xl ml-1 hover:cursor-pointer">Featured Post</span>
+        <discord-embed
+        slot="embeds"
+        embed-title="Help Menu"
+        color="rgba(84, 97, 242, 1)"
+      >
+        <discord-embed-description slot="description">
+        <span>
+            <!-- Language Support -->
+            <span class="font-bold">Language support for en-US:</span> 100%
+            <br>
+        </span>
+        <br>
+        <span>
+            <!-- General Commands -->
+            <span class="font-bold text-base">General Commands</span><br>
+            <span class="font-normal">
+                <span class="command">/blog-post</span>,
+                <span class="command">/help</span>,
+                <span class="command">/message reminders list</span>,
+                <span class="command">/message reminders cancel</span>,
+                <span class="command">/ping</span>,
+                <span class="">Remind Me</span>,
+                <span class="command">/support-article</span>,
+                <span class="command">/support-sections</span>
+            </span>
+        </span><br>
+        <span>
+            <!-- Dev Commands -->
+            <span class="font-bold text-base">Developer Commands</span><br>
+            <span class="font-normal">
+                <span class="command">/eval</span>
+            </span>
+        </span>
+        <br>
+        <span>
+            <!-- Mod Commands -->
+            <span class="font-bold text-base">Moderator Commands</span><br>
+            <span class="font-normal">
+                <span>Feature Message</span>,
+                <span class="command">/settings</span>
+            </span>
+        </span>
+        </discord-embed-description>
+
+        <discord-embed-footer slot="footer" footer-image="/logo.png">
+          Made with ❤️ by discord.gg/experiments
+        </discord-embed-footer>
+      </discord-embed>
+    </discord-message>
+    
   </discord-messages>
 </template>
 
@@ -77,7 +129,7 @@
 .command {
     padding: 2px;
     background-color: #393d6b;
-    border-radius: 4px;
+    border-radius: 4px; /**rounded */
     font-weight: 600;
 }
 </style>

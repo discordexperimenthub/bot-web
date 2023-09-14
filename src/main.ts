@@ -31,7 +31,7 @@ window.$discordMessage = {
   profiles: {
     dehBot: {
       bot: true,
-      verified: true,
+      verified: false,
       avatar: "/logo.png",
       author: "Experiment Hub",
       roleColor: "rgba(84, 97, 242, 1)",

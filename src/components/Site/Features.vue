@@ -1,6 +1,10 @@
+<!-- TODO carousel does not show up on a specific screen size -->
 <template>
   <div class="m-8">
-    <div class="invisible lg:visible flex justify-center align-middle" v-if="!isMobile">
+    <div
+      class="invisible lg:visible flex justify-center align-middle"
+      v-if="!isMobile"
+    >
       <div class="lg:w-[50%] w-[95%]">
         <Carousel :autoplay="3500" :wrap-around="true" :items-to-show="1">
           <Slide v-for="(feature, index) in Feautures" :key="index">
@@ -24,20 +28,17 @@
                 </span>
               </div>
 
-                <span class="text-deh-white text-xl text-center">
+              <span class="text-deh-white text-xl text-center">
                 <!-- Description -->
                 {{ $t(feature.description) }}
               </span>
 
-              <div class="flex justify-center align-middle">
-                <!-- Image -->
-                <a
-                  :href="feature.thumbnail.url"
-                  target="_blank"
-                  class="flex mt-2 justify-center align-middle"
-                >
-                  <img :src="feature.thumbnail.url" class="rounded-xl" />
-                </a>
+              <div class="text-left mt-2">
+                <div v-if="feature.component === 'AutoMod'">
+                  <Automod />
+                </div>
+                <div v-else-if="feature.component === 'Home'"><Home /></div>
+                <div v-else-if="feature.component === 'MsgReminder'"><Reminder /></div>
               </div>
             </div>
           </Slide>
@@ -111,6 +112,12 @@ import { onBeforeMount, onMounted, onUpdated, ref } from "vue";
 import { Carousel, Slide, Navigation, Pagination } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 
+import Automod from "../discordComponents/automod.vue";
+import Home from "../discordComponents/home.vue";
+import Reminder from "../discordComponents/reminder.vue";
+
+type FeauterComponent = "AutoMod" | "Home" | "MsgReminder";
+
 /**
  * Every raw string needs to be a localizationKey except for url
  */
@@ -128,6 +135,7 @@ interface FeatureData {
   };
   description: string;
   beta?: boolean;
+  component: FeauterComponent;
 }
 
 const Feautures: FeatureData[] = [
@@ -143,6 +151,7 @@ const Feautures: FeatureData[] = [
       url: "/automodAi_example.png",
     },
     beta: true,
+    component: "AutoMod",
   },
   {
     description: "feature.home.desc",
@@ -155,6 +164,7 @@ const Feautures: FeatureData[] = [
     thumbnail: {
       url: "/home_example.png",
     },
+    component: "Home",
   },
   {
     description: "feature.msgReminder.desc",
@@ -168,6 +178,7 @@ const Feautures: FeatureData[] = [
       url: "/reminde_example.png",
     },
     beta: false,
+    component: "MsgReminder",
   },
 ];
 
@@ -175,13 +186,13 @@ const isMobile = ref(true);
 
 onBeforeMount(() => {
   isMobile.value = window.innerWidth < 768;
-})
+});
 
 onUpdated(() => {
   isMobile.value = window.innerWidth < 768;
-})
+});
 
 onMounted(() => {
   isMobile.value = window.innerWidth < 768;
-})
+});
 </script>
