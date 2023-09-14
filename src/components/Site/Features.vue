@@ -3,7 +3,7 @@
   <div class="m-8">
     <div
       class="invisible lg:visible flex justify-center align-middle"
-      v-if="!isMobile"
+      v-if="!isBigMobile"
     >
       <div class="lg:w-[50%] w-[95%]">
         <Carousel :autoplay="3500" :wrap-around="true" :items-to-show="1">
@@ -37,8 +37,12 @@
                 <div v-if="feature.component === 'AutoMod'">
                   <Automod />
                 </div>
-                <div v-else-if="feature.component === 'Home'"><Home /></div>
-                <div v-else-if="feature.component === 'MsgReminder'"><Reminder /></div>
+                <div v-else-if="feature.component === 'Home'">
+                  <Home />
+                </div>
+                <div v-else-if="feature.component === 'MsgReminder'">
+                  <Reminder />
+                </div>
               </div>
             </div>
           </Slide>
@@ -53,7 +57,7 @@
 
     <div v-else>
       <template v-for="(feature, _) in Feautures">
-        <div class="font-bold text-3xl p-4">
+        <div class="font-bold text-3xl p-4 text-center align-middle">
           <!-- Title -->
           <img
             :src="feature.image.url"
@@ -64,27 +68,40 @@
           }}</span>
           <span
             v-if="feature.beta"
-            class="text-deh-white bg-deh-main p-[2px] pr-[6px] mx-1 text-start text-base rounded"
+            class="text-deh-white bg-deh-main p-[2px] pr-[6px] mx-1 text-start text-base rounded align-top"
           >
             BETA
           </span>
+
+          <br />
+          <span class="text-deh-white text-xl font-normal">
+            <!-- Description -->
+            {{ $t(feature.description) }}
+          </span>
         </div>
 
-        <span class="text-deh-white text-xl">
-          <!-- Description -->
-          {{ $t(feature.description) }}
-        </span>
-
-        <div class="flex justify-center align-middle">
-          <!-- Image -->
-          <a
-            :href="feature.thumbnail.url"
-            target="_blank"
-            class="flex mt-2 justify-center align-middle"
-          >
-            <img :src="feature.thumbnail.url" class="rounded-xl" />
-          </a>
-        </div>
+        <template v-if="isSmallMobileScreen() === false">
+          <div class="text-left mt-2">
+            <div v-if="feature.component === 'AutoMod'">
+              <Automod />
+            </div>
+            <div v-else-if="feature.component === 'Home'"><Home /></div>
+            <div v-else-if="feature.component === 'MsgReminder'">
+              <Reminder />
+            </div>
+          </div>
+        </template>
+        <template v-else>
+          <div class="flex justify-center align-middle">
+            <a
+              :href="feature.thumbnail.url"
+              target="_blank"
+              class="flex mt-2 justify-center align-middle"
+            >
+              <img :src="feature.thumbnail.url" class="rounded-xl" />
+            </a>
+          </div>
+        </template>
       </template>
     </div>
   </div>
@@ -182,17 +199,21 @@ const Feautures: FeatureData[] = [
   },
 ];
 
-const isMobile = ref(true);
+function isSmallMobileScreen() {
+  return window.innerWidth < 900;
+}
+
+const isBigMobile = ref(true);
 
 onBeforeMount(() => {
-  isMobile.value = window.innerWidth < 768;
+  isBigMobile.value = window.innerWidth < 1080;
 });
 
 onUpdated(() => {
-  isMobile.value = window.innerWidth < 768;
+  isBigMobile.value = window.innerWidth < 1080;
 });
 
 onMounted(() => {
-  isMobile.value = window.innerWidth < 768;
+  isBigMobile.value = window.innerWidth < 1080;
 });
 </script>

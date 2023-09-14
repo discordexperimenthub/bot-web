@@ -17,7 +17,7 @@
             "title": "AI Automod"
         },
         "home": {
-            "desc": "Let your members not miss any events by displaying important news on the home page",
+            "desc": "Let your members not miss any events by displaying important news in the home channel",
             "title": "Home"
         },
         "msgReminder": {
