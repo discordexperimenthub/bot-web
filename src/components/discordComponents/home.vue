@@ -2,7 +2,7 @@
   <discord-messages>
     <discord-message profile="voronWebhook"> 
         <img src="/feature.svg" height="22" width="22" class="inline-flex" />
-        <span class="align-middle text-blue-500 font-bold test-xl ml-1 hover:cursor-pointer">Featured Post</span>
+        <span class="align-middle text-blue-500 font-bold test-xl ml-1 hover:cursor-pointer">Original Message</span>
         <br>
         <div class="code-block rounded border p-2 my-2 border-[#1e1f22] w-full">
             <span class="code-keyword">type </span>
@@ -48,7 +48,7 @@
 
     <discord-message profile="dehBotWebhook"> 
         <img src="/feature.svg" height="22" width="22" class="inline-flex" />
-        <span class="align-middle text-blue-500 font-bold test-xl ml-1 hover:cursor-pointer">Featured Post</span>
+        <span class="align-middle text-blue-500 font-bold test-xl ml-1 hover:cursor-pointer">Original Message</span>
         <discord-embed
         slot="embeds"
         embed-title="Help Menu"
