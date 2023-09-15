@@ -5,8 +5,8 @@
       class="invisible lg:visible flex justify-center align-middle"
       v-if="!isBigMobile"
     >
-      <div class="lg:w-[50%] w-[95%]">
-        <Carousel :autoplay="3500" :wrap-around="true" :items-to-show="1">
+      <div class="lg:w-[50%] w-[95%]"><!-- 3500  -->
+        <Carousel :autoplay="800000" :wrap-around="true" :items-to-show="1">
           <Slide v-for="(feature, index) in Feautures" :key="index">
             <div
               class="carousel__item p-8 w-full h-full rounded-lg bg-opacity-40 bg-deh-server-slider backdrop-blur-lg m-2"

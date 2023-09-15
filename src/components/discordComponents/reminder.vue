@@ -1,4 +1,3 @@
-import type { DiscordMessageOptions from '@skyra/discord-components-core';
 <template>
   <discord-messages>
     <discord-message profile="dehBot" ephemeral>
@@ -9,17 +8,17 @@ import type { DiscordMessageOptions from '@skyra/discord-components-core';
       ></discord-command>
       <discord-embed
         slot="embeds"
-        embed-title="Message Reminders"
+        :embed-title="$t('feature.msgReminder.title')"
         color="rgba(84, 97, 242, 1)"
       >
         <discord-embed-description slot="description">
-            1. Ends <discord-time>in 4 hours</discord-time><br>
+            1. {{ $t('feature.msgReminder.ends') }} <discord-time>{{ $t('feature.msgReminder.time4Hours') }}</discord-time><br>
             <code class="multiline mt-2">
                 Please remind me!
             </code>
             <br>
 
-            2. Ends <discord-time>in 3 days</discord-time><br>
+            2. {{ $t('feature.msgReminder.ends') }} <discord-time>{{ $t('feature.msgReminder.time3Days') }}</discord-time><br>
             <code class="multiline mt-2">
                 ```ts <br>
                 type AllowdTypes = string | number | symbol;<br>
@@ -29,7 +28,7 @@ import type { DiscordMessageOptions from '@skyra/discord-components-core';
             </code>
             <br>
 
-            3. Ends <discord-time>in 7 days</discord-time><br>
+            3. {{ $t('feature.msgReminder.ends') }} <discord-time>{{ $t('feature.msgReminder.time7Days') }}</discord-time><br>
             <code class="multiline mt-2">
                 {{ '&nbsp;<@1078340529932222505> Please remind me' }}
             </code>

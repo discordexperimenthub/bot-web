@@ -64,7 +64,7 @@
 
         <section class="mt-4">
             <div class="font-bold text-deh-white text-center text-5xl underline">
-                Features
+                {{ $t('feature.title') }}
             </div>
             <Features />
         </section>
