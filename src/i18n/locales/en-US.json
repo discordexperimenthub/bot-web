@@ -1,15 +1,17 @@
 {
     "navfoo": {
+        "title":"Experiment Hub",
         "support":"Support",
         "invite":"Invite",
         "docs":"Documentation"
     },
     "servers": {
         "server":"Servers",
-        "desc":"{c} great communitys are using Experiment Hub"
+        "desc":"{c} great communities are using Experiment Hub",
+        "members":"Members"
     },
     "home": {
-        "description":""
+        "description":"Imagine a place... for accessing all experiments!"
     },
 
     "global" : {

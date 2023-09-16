@@ -1,15 +1,17 @@
 {
     "navfoo": {
+        "title":"Experiment Hub",
         "support":"Support",
         "invite":"Einladen",
         "docs":"Dokumentation"
     },
     "servers": {
         "server":"Server",
-        "desc":"{c} Communitys nutzen Experiment Hub Bot"
+        "desc":"{c} Communitys nutzen Experiment Hub",
+        "members":"Mitglieder"
     },
     "home": {
-        "description":""
+        "description":"Stellen dir einen Ort vor... für den Zugang zu allen Experimenten!"
     },
     
     "global" : {

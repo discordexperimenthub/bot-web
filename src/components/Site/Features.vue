@@ -1,4 +1,3 @@
-<!-- TODO carousel does not show up on a specific screen size -->
 <template>
   <div class="m-8">
     <div
@@ -217,3 +216,5 @@ onMounted(() => {
   isBigMobile.value = window.innerWidth < 1080;
 });
 </script>
+
+
