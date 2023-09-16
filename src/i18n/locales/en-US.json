@@ -1,28 +1,66 @@
 {
     "navfoo": {
+        "title":"Experiment Hub",
         "support":"Support",
         "invite":"Invite",
         "docs":"Documentation"
     },
     "servers": {
         "server":"Servers",
-        "desc":"{c} great communitys are using Experiment Hub"
+        "desc":"{c} great communities are using Experiment Hub",
+        "members":"Members"
     },
     "home": {
-        "description":""
+        "description":"Imagine a place... for accessing all experiments!"
     },
+
+    "global" : {
+        "enabled":" Enabled",
+        "disabled":" Disabled",
+        "none":" None",
+        "all":"All"
+    },
+
     "feature": {
+        "title":"Features",
         "automod": {
             "desc": "Be one of the first to moderate your server with AI",
-            "title": "AI Automod"
+            "title": "AI Automod",
+            "component" : {
+                "title" : "Automod Ai (Experimental)",
+                "notFound":" 0 found",
+                "alertChannel":"Alert Channel",
+                "rules":"Rules",
+                "aiModel":"AI Model",
+                "byOpenAi":"by OpenAi",
+                "allowFallbacks":"Allow Fallbacks",
+                "enbaledBlacklistedRoles":"Enabled Blacklisted Roles",
+                "blacklistedChannels":"Blacklisted Channels",
+                "filter":"Filters",
+                "blacklistedRoles":"Blacklisted Roles",
+                "toxicFilter":"Toxic Content Filter",
+                "badContentFilter":"Bad Content Filter",
+                "footer":"Made with ❤️ by discord.gg/experiments"
+            }
         },
         "home": {
             "desc": "Let your members not miss any events by displaying important news in the home channel",
-            "title": "Home"
+            "title": "Home",
+            "component": {
+                "title":"Help Menu",
+                "langSupport":"Language support for en-US:",
+                "generalCommand":"General Commands",
+                "devCommands":"Developer Commands",
+                "modCommands":"Moderator Commands"
+            }
         },
         "msgReminder": {
             "desc": "The way to remember your plans",
-            "title": "Message Reminders"
+            "title": "Message Reminders",
+            "ends": "Ends",
+            "time4Hours":"in 4 hours",
+            "time3Days":"in 3 days",
+            "time7Days":"in 7 Days"
         }
     }
 }

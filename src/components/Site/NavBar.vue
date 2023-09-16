@@ -4,7 +4,7 @@
             <div class="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-start">
                 <div class="w-full m-1 flex justify-start">
                     <div class="text-deh-white rounded blue text-4xl font-bold p-2">
-                        Experiment Hub Bot
+                        {{ $t('navfoo.title') }} <span class="text-deh-white bg-deh-main rounded p-[2px] text-xs align-top font-bold">BOT</span>
                     </div>
                 </div>
                 <button
@@ -26,11 +26,11 @@
                             <span class="ml-2 lg:drop-shadow-[0_2px_20px_rgba(84,97,242,1)] text-xl">{{ $t('navfoo.support') }}</span>
                         </a>
                     </li>
-                    <li class="navbar-li-item">
+                    <!-- <li class="navbar-li-item">
                         <a class="px-3 py-2 flex items-center text-xs uppercase font-bold hover:opacity-75">
                             <span class="ml-2 lg:drop-shadow-[0_2px_20px_rgba(84,97,242,1)] text-xl">{{ $t('navfoo.docs') }}</span>
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>

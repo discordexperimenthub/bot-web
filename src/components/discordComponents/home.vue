@@ -1,3 +1,4 @@
+
 <template>
   <discord-messages>
     <discord-message profile="voronWebhook"> 
@@ -51,19 +52,19 @@
         <span class="align-middle text-blue-500 font-bold test-xl ml-1 hover:cursor-pointer">Original Message</span>
         <discord-embed
         slot="embeds"
-        embed-title="Help Menu"
+        :embed-title=" $t('feature.home.component.title')"
         color="rgba(84, 97, 242, 1)"
       >
         <discord-embed-description slot="description">
         <span>
             <!-- Language Support -->
-            <span class="font-bold">Language support for en-US:</span> 100%
+            <span class="font-bold">{{ $t('feature.home.component.langSupport') }}</span> 100%
             <br>
         </span>
         <br>
         <span>
             <!-- General Commands -->
-            <span class="font-bold text-base">General Commands</span><br>
+            <span class="font-bold text-base">{{ $t('feature.home.component.generalCommand') }}</span><br>
             <span class="font-normal">
                 <span class="command">/blog-post</span>,
                 <span class="command">/help</span>,
@@ -77,7 +78,7 @@
         </span><br>
         <span>
             <!-- Dev Commands -->
-            <span class="font-bold text-base">Developer Commands</span><br>
+            <span class="font-bold text-base">{{ $t('feature.home.component.devCommands') }}</span><br>
             <span class="font-normal">
                 <span class="command">/eval</span>
             </span>
@@ -85,7 +86,7 @@
         <br>
         <span>
             <!-- Mod Commands -->
-            <span class="font-bold text-base">Moderator Commands</span><br>
+            <span class="font-bold text-base">{{ $t('feature.home.component.modCommands') }}</span><br>
             <span class="font-normal">
                 <span>Feature Message</span>,
                 <span class="command">/settings</span>
