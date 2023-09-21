@@ -11,35 +11,49 @@
           <!-- Dropdown -->
 
           <div>
-            <button class="text-white" @click="openCustomMenu()">
-              Press me
+            <button class="text-white text-2xl absolute -right-[0px] m-4 mr-[30px] bg-black rounded box-shadow-custom-black" @click="openCustomMenu()">
+              ↗️
             </button>
+
+            <div class="rounded text-deh-main text-4xl font-bold p-2 bg-neutral-700 box-shadow-custom-black mt-4">
+              {{ $t('navfoo.title') }}
+            </div>
+
             <div
               v-if="showCustomMenu"
               id="custom-menu"
-              class="absolute text-deh-main h-[100%] backdrop-blur-sm p-1 text-right -left-[0px] -top-[0px] w-[100%] z-10 custom-fade-in"
+              class="absolute text-deh-main h-screen bg-deh-footer bg-opacity-50 backdrop-blur-sm p-1 text-right -left-[0px] -top-[0px] w-[100%] z-10 custom-fade-in "
             >
               <button
-                class="absolute -right-[0px] m-4 mr-6"
+                class="absolute -right-[0px] m-4 mt-10 mr-8"
                 @click="closeCustomMenuAnimation()"
               >
                 ❌
               </button>
+             
               <div
-                class="bg-deh-footer ml-8 mr-2 rounded min-h-[150px] p-5 pt-10 box-shadow-custom-black"
+                class="bg-deh-footer ml-8 mt-8 mr-2 rounded min-h-[150px] rounded-l-3xl p-5 pt-10 box-shadow-custom-black"
               >
-                test
+                <div class="text-left text-3xl">{{ $t('navfoo.title') }}</div>
+                <div v-for="link of links">
+                  <div class="text-2xl align-middle">
+                    <img :src="link.iconSrc" class="inline-flex pb-2 mr-2" width="32">
+                    <span class="hover-underline-animation">{{ $t(link.localCode) }}</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
       <div
+        v-else
         class="w-full relative flex justify-between lg:w-auto px-4 lg:static lg:block lg:justify-start"
       >
         <div class="w-full m-1 flex justify-start">
           <div
-            class="rounded text-deh-main text-4xl font-bold p-2 bg-neutral-700 box-shadow-custom-black"
+            class="rounded text-deh-main text-4xl font-bold p-2 bg-neutral-700 box-shadow-custom-black mt-4"
           >
             {{ $t("navfoo.title") }}
             <span
@@ -47,52 +61,6 @@
               >BOT</span
             >
           </div>
-        </div>
-        <button
-          class="cursor-pointer text-xl leading-none px-3 py-1 rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-          type="button"
-          v-on:click="toggleNavbar()"
-        >
-          🟰
-        </button>
-      </div>
-
-      <div v-if="showMenu"></div>
-
-      <div
-        v-bind:class="{ hidden: !showMenu, flex: showMenu }"
-        class="lg:flex lg:flex-grow items-center text-deh-main rounded lg:bg-transparent w-full lg:w-auto"
-      >
-        <div
-          class="flex flex-col lg:flex-row list-none lg:ml-auto navbar-ul-item"
-        >
-          <a
-            class="navbar-li-item bg-neutral-700 box-shadow-custom-black mx-2 rounded"
-            href=""
-          >
-            <a class="p-[10px] flex items-center text-xs uppercase font-bold">
-              <span
-                class="mx-2 lg:drop-shadow-[0_2px_20px_rgba(84,97,242,0.50)] text-xl"
-                >{{ $t("navfoo.invite") }}</span
-              >
-            </a>
-          </a>
-          <a
-            class="navbar-li-item bg-neutral-700 box-shadow-custom-black mx-2 rounded"
-            href=""
-          >
-            <a class="p-[10px] flex items-center text-xs uppercase font-bold">
-              <span
-                class="mx-2 lg:drop-shadow-[0_2px_20px_rgba(84,97,242,0.50)] text-xl"
-                >{{ $t("navfoo.support") }}</span
-              >
-            </a>
-          </a>
-          <!-- <li class="navbar-li-item">
-                        <a class="px-3 py-2 flex items-center text-xs uppercase font-bold hover:opacity-75">
-                            <span class="ml-2 lg:drop-shadow-[0_2px_20px_rgba(84,97,242,1)] text-xl">{{ $t('navfoo.docs') }}</span>
-                        </a>
-                    </li> -->
         </div>
       </div>
     </div>

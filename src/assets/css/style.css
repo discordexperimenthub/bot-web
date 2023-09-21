@@ -79,7 +79,7 @@
 
 .hover-underline-animation:hover {
     cursor: pointer;
-    font-size: 150%;
+    font-size: 125%;
     transition: all 0.25s ease-out;
 }
 
@@ -133,4 +133,20 @@
 
 .custom-fade-in {
   animation: fade-in 0.3s ease;
+}
+
+@keyframes from-right {
+  from {
+    right: -100%;
+  }
+
+  to {
+    left : 0px 
+  }
+}
+
+
+/* should be an animation where the class cames from the right  */
+.custom-fade-in-from-right {
+  animation: from-right 0.5 ease-in;
 }
