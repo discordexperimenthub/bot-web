@@ -9,47 +9,30 @@
           <div>
             <button
               class="text-white text-2xl absolute -right-[0px] m-4 mr-[30px] bg-black rounded box-shadow-custom-black"
-              @click="openCustomMenu()"
-            >
+              @click="openCustomMenu()">
               ↗️
             </button>
 
             <div
-              class="rounded text-deh-main text-4xl max-w-fit font-bold p-2 bg-neutral-700 box-shadow-custom-black mt-4"
-            >
+              class="rounded text-deh-main text-4xl max-w-fit font-bold p-2 bg-neutral-700 box-shadow-custom-black mt-4">
               {{ $t("navfoo.title") }}
             </div>
 
-            <div
-              v-if="showCustomMenu"
-              id="custom-menu"
-              class="absolute text-deh-main h-screen bg-deh-footer bg-opacity-75 p-1 text-center -left-[0px] -top-[0px] w-full z-10 custom-fade-in"
-            >
-              <div
-                class="bg-deh-footer ml-8 mt-8 mr-2 rounded min-h-[150px] p-5 pt-6 box-shadow-custom-black"
-              >
+            <div v-if="showCustomMenu" id="custom-menu"
+              class="absolute text-deh-main h-screen bg-deh-footer bg-opacity-75 p-1 text-center -left-[0px] -top-[0px] w-full z-10 custom-fade-in">
+              <div class="bg-deh-footer ml-8 mt-8 mr-2 rounded min-h-[150px] p-5 pt-6 box-shadow-custom-black">
                 <div class="inline-flex w-full">
-                  <div
-                    class="text-left text-4xl font-bold bg-neutral-700 min-w-fit p-1 rounded"
-                  >
+                  <div class="text-left text-4xl font-bold bg-neutral-700 min-w-fit p-1 rounded">
                     {{ $t("navfoo.title") }}
                   </div>
-                  <button
-                    class="text-2xl text-right ml-auto"
-                    @click="closeCustomMenuAnimation()"
-                  >
+                  <button class="text-2xl text-right ml-auto" @click="closeCustomMenuAnimation()">
                     ❌
                   </button>
                 </div>
                 <div class="p-2"></div>
                 <div v-for="link of links">
                   <div class="text-2xl align-middle my-2">
-                    <img
-                      :src="link.iconSrc"
-                      v-if="!link.icons"
-                      class="inline-flex pb-2 mr-2"
-                      width="32"
-                    />
+                    <img :src="link.iconSrc" v-if="!link.icons" class="inline-flex pb-2 mr-2" width="32" />
                     <font-awesome-icon :icon="['fab', 'github']" />
                     <!-- <span v-else><font-awesome-icon :icon="[...link.icons]" /></span> -->
                     <a :href="link.url" class="hover-underline-animation">{{
@@ -63,23 +46,14 @@
         </div>
       </div>
 
-      <div
-        v-else
-        class="relative flex justify-between lg:w-auto px-4 lg:static lg:block lg:justify-start w-[100%]"
-      >
+      <div v-else class="relative flex justify-between lg:w-auto px-4 lg:static lg:block lg:justify-start w-[100%]">
         <div class="m-1 flex">
-          <div
-            class="rounded text-deh-main min-w-fit text-4xl font-bold p-2 bg-neutral-700 box-shadow-custom-black mt-4"
-          >
+          <div class="rounded text-deh-main min-w-fit text-4xl font-bold p-2 bg-neutral-700 box-shadow-custom-black mt-4">
             {{ $t("navfoo.title") }}
             <span
-              class="text-deh-white bg-deh-main rounded p-[2px] text-xs align-top font-bold lg:drop-shadow-[0_2px_20px_rgba(84,97,242,0.5)]"
-              >BOT</span
-            >
+              class="text-deh-white bg-deh-main rounded p-[2px] text-xs align-top font-bold lg:drop-shadow-[0_2px_20px_rgba(84,97,242,0.5)]">BOT</span>
           </div>
-          <div
-            class="w-full flex ml-[15%] text-deh-main text-4xl font-bold p-2 mt-4"
-          >
+          <div class="w-full flex ml-[15%] text-deh-main text-4xl font-bold p-2 mt-4">
             <!-- 
                 - Features
                 - Server
@@ -94,9 +68,13 @@
               Features
             </a>
 
-            <!-- TODO cant select an item from the drop down -->
-            <div class="box-shadow-custom-black bg-neutral-700 rounded p-2 m-1 mx-4 cursor-pointer" @pointerenter="toggleLinkList" @pointerleave="toggleLinkList" >
+            <!-- TODO: cant select an item from the drop down -->
+            <!-- show on hover and append the range so its possible to click the links/buttons -->
+            <!-- and close the menu after leaving the area -->
+            <div class="box-shadow-custom-black bg-neutral-700 rounded p-2 m-1 mx-4 cursor-pointer"
+              @pointerenter="toggleLinkList" @pointerleave="toggleLinkList">
               Links 🔽
+              <!-- TODO the link list (menu should be an equaly alignd with the title (Links 🔽)) -->
               <div v-if="showLinkList" class="absolute mt-4 text-center">
                 <div class="bg-neutral-700 rounded p-1 custom-fade-in my-1">
                   Discord
@@ -143,14 +121,14 @@ export default {
     return {
       showMenu: false,
       showCustomMenu: false,
-      showLinkList:true,
+      showLinkList: false,
     };
   },
   methods: {
-    toggleLinkList: function () {
+    toggleLinkList() {
       this.showLinkList = !this.showLinkList;
     },
-    openCustomMenu: function () {
+    openCustomMenu() {
       this.showCustomMenu = !this.showCustomMenu;
       const body = document.querySelector("body");
       body!.style.overflow = "hidden";
@@ -168,10 +146,11 @@ export default {
         body!.style.overflow = "auto";
       }, 200);
     },
-    isMobile: function () {
+    //TODO add an event listiener for a resize event of the window
+    isMobile() {
       return window.innerWidth < 1080;
     },
-    toggleNavbar: function () {
+    toggleNavbar() {
       this.showMenu = !this.showMenu;
     },
   },
