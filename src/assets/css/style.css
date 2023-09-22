@@ -68,8 +68,6 @@
   box-shadow: 0px 0px 15px 6px rgb(34 33 31);
 }
 
-
-
 /* <p class="hover-underline-animation">test</p> */
 .hover-underline-animation {
   display: inline-block;
@@ -78,14 +76,14 @@
 }
 
 .hover-underline-animation:hover {
-    cursor: pointer;
-    font-size: 125%;
-    transition: all 0.25s ease-out;
+  cursor: pointer;
+  font-size: 125%;
+  transition: all 0.25s ease-out;
 }
 
 .hover-underline-animation:not(:hover) {
-    font-size: 100%;
-    transition: all 0.25s ease-out;
+  font-size: 100%;
+  transition: all 0.25s ease-out;
 }
 
 .hover-underline-animation::after {
@@ -105,7 +103,6 @@
   transform: scaleX(1);
   transform-origin: bottom left;
 }
-
 
 @keyframes fade-out {
   from {
@@ -141,10 +138,9 @@
   }
 
   to {
-    left : 0px 
+    left: 0px;
   }
 }
-
 
 /* should be an animation where the class cames from the right  */
 .custom-fade-in-from-right {

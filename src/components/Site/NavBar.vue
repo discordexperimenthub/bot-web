@@ -1,8 +1,6 @@
 <template>
-  <div class="relative flex flex-wrap items-center justify-between px-2 py-3">
-    <div
-      class="container px-4 mx-auto flex flex-wrap items-center justify-between"
-    >
+  <div class="relative px-2 py-3">
+    <div class="container px-4 mx-auto items-center justify-between">
       <div v-if="isMobile() === true">
         <!-- Mobile Navbar -->
         <div class="text-deh-main"></div>
@@ -17,7 +15,7 @@
             </button>
 
             <div
-              class="rounded text-deh-main text-4xl font-bold p-2 bg-neutral-700 box-shadow-custom-black mt-4"
+              class="rounded text-deh-main text-4xl max-w-fit font-bold p-2 bg-neutral-700 box-shadow-custom-black mt-4"
             >
               {{ $t("navfoo.title") }}
             </div>
@@ -28,7 +26,7 @@
               class="absolute text-deh-main h-screen bg-deh-footer bg-opacity-75 p-1 text-center -left-[0px] -top-[0px] w-full z-10 custom-fade-in"
             >
               <div
-                class="bg-deh-footer ml-8 mt-8 mr-2 rounded min-h-[150px] rounded-l-3xl p-5 pt-6 box-shadow-custom-black"
+                class="bg-deh-footer ml-8 mt-8 mr-2 rounded min-h-[150px] p-5 pt-6 box-shadow-custom-black"
               >
                 <div class="inline-flex w-full">
                   <div
@@ -48,9 +46,12 @@
                   <div class="text-2xl align-middle my-2">
                     <img
                       :src="link.iconSrc"
+                      v-if="!link.icons"
                       class="inline-flex pb-2 mr-2"
                       width="32"
                     />
+                    <font-awesome-icon :icon="['fab', 'github']" />
+                    <!-- <span v-else><font-awesome-icon :icon="[...link.icons]" /></span> -->
                     <a :href="link.url" class="hover-underline-animation">{{
                       $t(link.localCode)
                     }}</a>
@@ -64,17 +65,50 @@
 
       <div
         v-else
-        class="w-full relative flex justify-between lg:w-auto px-4 lg:static lg:block lg:justify-start"
+        class="relative flex justify-between lg:w-auto px-4 lg:static lg:block lg:justify-start w-[100%]"
       >
-        <div class="w-full m-1 flex justify-start">
+        <div class="m-1 flex">
           <div
-            class="rounded text-deh-main text-4xl font-bold p-2 bg-neutral-700 box-shadow-custom-black mt-4"
+            class="rounded text-deh-main min-w-fit text-4xl font-bold p-2 bg-neutral-700 box-shadow-custom-black mt-4"
           >
             {{ $t("navfoo.title") }}
             <span
               class="text-deh-white bg-deh-main rounded p-[2px] text-xs align-top font-bold lg:drop-shadow-[0_2px_20px_rgba(84,97,242,0.5)]"
               >BOT</span
             >
+          </div>
+          <div
+            class="w-full flex ml-[15%] text-deh-main text-4xl font-bold p-2 mt-4"
+          >
+            <!-- 
+                - Features
+                - Server
+                - Dropdown
+                  - externe Links
+               -->
+            <a href="" class="box-shadow-custom-black bg-neutral-700 rounded p-2 m-1 mx-4">
+              Server
+            </a>
+
+            <a class="box-shadow-custom-black bg-neutral-700 rounded p-2 m-1 mx-4">
+              Features
+            </a>
+
+            <!-- TODO cant select an item from the drop down -->
+            <div class="box-shadow-custom-black bg-neutral-700 rounded p-2 m-1 mx-4 cursor-pointer" @pointerenter="toggleLinkList" @pointerleave="toggleLinkList" >
+              Links 🔽
+              <div v-if="showLinkList" class="absolute mt-4 text-center">
+                <div class="bg-neutral-700 rounded p-1 custom-fade-in my-1">
+                  Discord
+                </div>
+                <div class="bg-neutral-700 rounded p-1 custom-fade-in my-1">
+                  GitHub
+                </div>
+                <div class="bg-neutral-700 rounded p-1 custom-fade-in my-1">
+                  Invite
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -85,6 +119,7 @@
 <script setup lang="ts">
 const links = [
   {
+    icons: ["fab", "github"],
     iconSrc: "/automod.png",
     localCode: "navfoo.invite",
     url: "",
@@ -108,9 +143,13 @@ export default {
     return {
       showMenu: false,
       showCustomMenu: false,
+      showLinkList:true,
     };
   },
   methods: {
+    toggleLinkList: function () {
+      this.showLinkList = !this.showLinkList;
+    },
     openCustomMenu: function () {
       this.showCustomMenu = !this.showCustomMenu;
       const body = document.querySelector("body");
