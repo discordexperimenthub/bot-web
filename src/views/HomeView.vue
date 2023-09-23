@@ -28,7 +28,7 @@
         </div>
       </section>
 
-      <Servers id="id_servers" />
+      <servers id="id_servers" />
 
       <section class="mt-4" id="id_features">
         <div class="font-bold text-deh-white text-center text-5xl underline">
@@ -38,14 +38,15 @@
       </section>
 
       <img src="../assets/img/footer.top.svg" class="fill-deh-server-slider" />
-      <Footer />
+      <footerNew />
     </main>
   </div>
 </template>
 
 <script setup lang="ts">
-import NavBar from "../components/Site/NavBar.vue";
-import Footer from "../components/Site/Footer.vue";
-import Features from "../components/Site/Features.vue";
-import Servers from "../components/Site/Servers.vue";
+import NavBar from '../components/Site/navbar.vue';
+import Footer from '../components/Site/footer.vue';
+import Features from '../components/site/Features.vue';
+import servers from '../components/Site/servers.vue';
+import footerNew from '../components/site/footerNew.vue';
 </script>
