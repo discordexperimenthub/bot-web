@@ -14,20 +14,6 @@ import router from "./router/index";
 
 import { i18n as initi18n } from "./i18n";
 
-/* import the fontawesome core */
-import { library } from '@fortawesome/fontawesome-svg-core'
-
-/* import font awesome icon component */
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-/* import specific icons */
-import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
-
-/* add icons to the library */
-library.add(faUserSecret)
-
-//TODO icons arent accessable at the moment
-
 const app = createApp(App);
 const i18n = initi18n;
 
@@ -40,8 +26,6 @@ applyPolyfills().then(() => {
 app.use(i18n);
 app.use(router);
 app.use(Vue3Marquee);
-
-app.component('font-awesome-icon', FontAwesomeIcon)
 
 window.$discordMessage = {
   profiles: {
@@ -67,11 +51,11 @@ window.$discordMessage = {
       roleColor: "#ffffff",
     },
     dehBotWebhook: {
-		bot: true,
-		verified: false,
-		avatar: "/logo.png",
-		author: "Experiment Hub",
-		roleColor: "#ffffff",
+      bot: true,
+      verified: false,
+      avatar: "/logo.png",
+      author: "Experiment Hub",
+      roleColor: "#ffffff",
     },
   },
 };

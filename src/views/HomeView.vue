@@ -28,9 +28,9 @@
         </div>
       </section>
 
-      <Servers />
+      <Servers id="id_servers" />
 
-      <section class="mt-4">
+      <section class="mt-4" id="id_features">
         <div class="font-bold text-deh-white text-center text-5xl underline">
           {{ $t("feature.title") }}
         </div>

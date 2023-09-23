@@ -54,37 +54,24 @@
               class="text-deh-white bg-deh-main rounded p-[2px] text-xs align-top font-bold lg:drop-shadow-[0_2px_20px_rgba(84,97,242,0.5)]">BOT</span>
           </div>
           <div class="w-full flex ml-[15%] text-deh-main text-4xl font-bold p-2 mt-4">
-            <!-- 
-                - Features
-                - Server
-                - Dropdown
-                  - externe Links
-               -->
-            <a href="" class="box-shadow-custom-black bg-neutral-700 rounded p-2 m-1 mx-4">
+            <a href="#id_servers" class="box-shadow-custom-black hover-underline-animation bg-neutral-700 rounded p-2 m-1 mx-4">
               Server
             </a>
 
-            <a class="box-shadow-custom-black bg-neutral-700 rounded p-2 m-1 mx-4">
+            <a href="#id_features" class="box-shadow-custom-black hover-underline-animation bg-neutral-700 rounded p-2 m-1 mx-4">
               Features
             </a>
 
-            <!-- TODO: cant select an item from the drop down -->
-            <!-- show on hover and append the range so its possible to click the links/buttons -->
-            <!-- and close the menu after leaving the area -->
-            <div class="box-shadow-custom-black bg-neutral-700 rounded p-2 m-1 mx-4 cursor-pointer"
-              @pointerenter="toggleLinkList" @pointerleave="toggleLinkList">
-              Links 🔽
-              <!-- TODO the link list (menu should be an equaly alignd with the title (Links 🔽)) -->
-              <div v-if="showLinkList" class="absolute mt-4 text-center">
-                <div class="bg-neutral-700 rounded p-1 custom-fade-in my-1">
-                  Discord
-                </div>
-                <div class="bg-neutral-700 rounded p-1 custom-fade-in my-1">
-                  GitHub
-                </div>
-                <div class="bg-neutral-700 rounded p-1 custom-fade-in my-1">
-                  Invite
-                </div>
+            <div class="dropdown box-shadow-custom-black bg-neutral-700 rounded p-2 m-1 mx-4 cursor-pointer">
+              <span>Links</span>
+              <div
+                class="dropdown-content text-lg mt-2 -left-5 w-36 align-middle text-center bg-deh-server-slider rounded">
+                <a href="" target="_blank" class="m-1 p-1 hover-underline-animation hover:bg-deh-footer rounded"><i class="fa fa-plus" />
+                  Invite</a>
+                <a href="" target="_blank" class="m-1 p-1 hover-underline-animation hover:bg-deh-footer rounded"><i
+                    class="fab fa-discord" /> Discord</a>
+                <a href="" target="_blank" class="m-1 p-1 hover-underline-animation hover:bg-deh-footer rounded"><i
+                    class="fa fa-github" /> GitHub</a>
               </div>
             </div>
           </div>
