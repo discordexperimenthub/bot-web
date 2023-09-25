@@ -3,8 +3,6 @@
     <div class="container px-4 mx-auto items-center justify-between">
       <div v-if="isMobile() === true">
         <!-- Mobile Navbar -->
-        <div class="text-deh-main"></div>
-
         <div class="mx-2">
           <div>
             <button
@@ -12,6 +10,16 @@
               @click="openCustomMenu()">
               ↗️
             </button>
+
+            <!-- 
+              TODO: Mobile NavBar Icons
+              TODO: Desktop NavBar Link List Animation
+              TODO: Desktop NavBar Elements more to the right 
+              TODO: Mobile Bot Icon smaller
+              TODO: Desktop Feature margin remove
+              TODO: Desktop Recreate the Title Text
+              TODO: Desktop Recreate Landing Screen
+             -->
 
             <div
               class="rounded text-deh-main text-4xl max-w-fit font-bold p-2 bg-neutral-700 box-shadow-custom-black mt-4">
@@ -32,8 +40,7 @@
                 <div class="p-2"></div>
                 <div v-for="link of links">
                   <div class="text-2xl align-middle my-2">
-                    <img :src="link.iconSrc" v-if="!link.icons" class="inline-flex pb-2 mr-2" width="32" />
-                    <font-awesome-icon :icon="['fab', 'github']" />
+                    <i :class="link.icon" class="mr-1" />
                     <!-- <span v-else><font-awesome-icon :icon="[...link.icons]" /></span> -->
                     <a :href="link.url" class="hover-underline-animation">{{
                       $t(link.localCode)
@@ -67,7 +74,7 @@
             <div class="dropdown box-shadow-custom-black bg-neutral-700 rounded p-2 m-1 mx-4 cursor-pointer">
               <span>Links</span>
               <div
-                class="dropdown-content text-lg mt-2 -left-5 w-36 align-middle text-center bg-deh-server-slider rounded">
+                class="dropdown-content custom-fade-in text-lg mt-2 -left-5 w-36 align-middle text-center bg-deh-server-slider rounded">
                 <a href="" target="_blank" class="m-1 p-1 hover-underline-animation hover:bg-deh-footer rounded"><i
                     class="fa fa-plus" />
                   Invite</a>
@@ -87,18 +94,18 @@
 <script setup lang="ts">
 const links = [
   {
-    icons: ["fab", "github"],
-    iconSrc: "/automod.png",
+    //string of classes for <i> element
+    icon: 'fa fa-plus',
     localCode: "navfoo.invite",
     url: "",
   },
   {
-    iconSrc: "/automod.png",
+    icon: 'fab fa-discord',
     localCode: "navfoo.support",
     url: "",
   },
   {
-    iconSrc: "/automod.png",
+    icon: 'fa-brands fa-github',
     localCode: "navfoo.github",
     url: "",
   },
