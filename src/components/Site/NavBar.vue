@@ -12,13 +12,14 @@
             </button>
 
             <!-- 
-              TODO: Mobile NavBar Icons
-              TODO: Desktop NavBar Link List Animation
-              TODO: Desktop NavBar Elements more to the right 
-              TODO: Mobile Bot Icon smaller
-              TODO: Desktop Feature margin remove
-              TODO: Desktop Recreate the Title Text
-              TODO: Desktop Recreate Landing Screen
+              TODO: Mobile NavBar Icons [✓]
+              TODO: Desktop NavBar Link List Animation [✓]
+              TODO: Desktop NavBar Elements more to the right [✓] 
+              TODO: Mobile Bot Icon smaller [ ]
+              TODO: Desktop Feature margin remove [ ]
+              TODO: Desktop Recreate the Title Text [ ]
+              TODO: Desktop Recreate Landing Screen [ ]
+              TODO: Mobile NavBar Popout justify center [ ]
              -->
 
             <div
@@ -60,7 +61,7 @@
             <span
               class="text-deh-white bg-deh-main rounded p-[2px] text-xs align-top font-bold lg:drop-shadow-[0_2px_20px_rgba(84,97,242,0.5)]">BOT</span>
           </div>
-          <div class="w-full flex ml-[15%] text-deh-main text-4xl font-bold p-2 mt-4">
+          <div class="w-full flex ml-[35%] text-deh-main text-4xl font-bold p-2 mt-4">
             <a href="#id_servers"
               class="box-shadow-custom-black hover-underline-animation bg-neutral-700 rounded p-2 m-1 mx-4">
               Server
