@@ -43,14 +43,17 @@
         </div>
       </div>
 
-      <div v-else class="relative flex justify-between lg:w-auto px-4 lg:static lg:block lg:justify-start w-[100%]">
+      <div v-else class="px-4 w-full">
         <div class="m-1 flex">
-          <div class="rounded text-deh-main min-w-fit text-4xl font-bold p-2 bg-neutral-700 box-shadow-custom-black mt-4">
-            {{ $t("navfoo.title") }}
-            <span
-              class="text-deh-white bg-deh-main rounded p-[2px] text-xs align-top font-bold lg:drop-shadow-[0_2px_20px_rgba(84,97,242,0.5)]">BOT</span>
-          </div>
-          <div class="w-full flex ml-[35%] text-deh-main text-4xl font-bold p-2 mt-4">
+          <span class="text-deh-main p-2 mt-4">
+            <div
+              class="box-shadow-custom-black text-6xl font-bold text-deh-main bg-neutral-700 rounded p-2 m-1">
+              {{ $t("navfoo.title") }}
+              <span
+                class="text-deh-white bg-deh-main rounded p-[2px] px-[3px] text-lg align-top font-bold lg:drop-shadow-[0_2px_20px_rgba(84,97,242,0.5)]">BOT</span>
+            </div>
+          </span>
+          <span class="ml-[35%] text-deh-main text-4xl font-bold p-2 mt-4">
             <a href="#id_servers"
               class="box-shadow-custom-black hover-underline-animation bg-neutral-700 rounded p-2 m-1 mx-4">
               Server
@@ -74,7 +77,7 @@
                     class="fa-brands fa-github" /> GitHub</a>
               </div>
             </div>
-          </div>
+          </span>
         </div>
       </div>
     </div>
@@ -82,7 +85,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onBeforeUnmount, onBeforeMount } from 'vue';
 
 const isMobileProp = ref(false);
 const showCustomMenu = ref(false);
@@ -113,6 +116,10 @@ onBeforeUnmount(() => {
   window.removeEventListener("resize", () => {
     isMobile();
   });
+})
+
+onBeforeMount(() => {
+  isMobile();
 })
 
 onMounted(() => {
