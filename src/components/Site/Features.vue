@@ -2,10 +2,10 @@
   <div class="m-8">
     <div
       class="invisible lg:visible flex justify-center align-middle"
-      v-if="!isBigMobile"
+      v-if="!isMobileProp"
     >
-      <div class="lg:w-[50%] w-[95%]"><!-- 3500  -->
-        <Carousel :autoplay="800000" :wrap-around="true" :items-to-show="1">
+      <div class="lg:w-[75%] w-[95%]">
+        <Carousel :autoplay="3500" :wrap-around="true" :items-to-show="1">
           <Slide v-for="(feature, index) in Feautures" :key="index">
             <div
               class="carousel__item p-8 w-full h-full rounded-lg bg-opacity-40 bg-deh-server-slider backdrop-blur-lg m-2"
@@ -32,7 +32,7 @@
                 {{ $t(feature.description) }}
               </span>
 
-              <div class="text-left mt-2">
+              <div class="text-left mt-2 flex justify-center align-middle">
                 <div v-if="feature.component === 'AutoMod'">
                   <Automod />
                 </div>
@@ -79,7 +79,7 @@
           </span>
         </div>
 
-        <template v-if="isSmallMobileScreen() === false">
+        <template v-if="isMobileProp">
           <div class="text-left mt-2">
             <div v-if="feature.component === 'AutoMod'">
               <Automod />
@@ -124,7 +124,7 @@
 </style>
 
 <script setup lang="ts">
-import { onBeforeMount, onMounted, onUpdated, ref } from "vue";
+import { onMounted, onBeforeUnmount, ref } from "vue";
 import { Carousel, Slide, Navigation, Pagination } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 
@@ -197,24 +197,23 @@ const Feautures: FeatureData[] = [
     component: "MsgReminder",
   },
 ];
+const isMobileProp = ref(false);
 
-function isSmallMobileScreen() {
-  return window.innerWidth < 900;
-}
+function isMobile() {
+  window.innerWidth < 1080 ? isMobileProp.value = true : isMobileProp.value = false;
+};
 
-const isBigMobile = ref(true);
-
-onBeforeMount(() => {
-  isBigMobile.value = window.innerWidth < 1080;
-});
-
-onUpdated(() => {
-  isBigMobile.value = window.innerWidth < 1080;
-});
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", () => {
+    isMobile();
+  });
+})
 
 onMounted(() => {
-  isBigMobile.value = window.innerWidth < 1080;
-});
+  window.addEventListener("resize", () => {
+    isMobile();
+  });
+})
 </script>
 
 
