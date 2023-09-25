@@ -1,7 +1,7 @@
 <template>
   <div class="relative px-2 py-3">
     <div class="container px-4 mx-auto items-center justify-between">
-      <div v-if="isMobile() === true">
+      <div v-if="isMobileProp === true">
         <!-- Mobile Navbar -->
         <div class="mx-2">
           <div>
@@ -15,6 +15,7 @@
               TODO: Mobile NavBar Icons [✓]
               TODO: Desktop NavBar Link List Animation [✓]
               TODO: Desktop NavBar Elements more to the right [✓] 
+              TODO: NavBar Global listen to resize event [ ]
               TODO: Mobile Bot Icon smaller [ ]
               TODO: Desktop Feature margin remove [ ]
               TODO: Desktop Recreate the Title Text [ ]
@@ -93,6 +94,45 @@
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+
+const isMobileProp = ref(false);
+const showCustomMenu = ref(false);
+
+function openCustomMenu() {
+  showCustomMenu.value = !showCustomMenu.value;
+  const body = document.querySelector("body");
+  body!.style.overflow = "hidden";
+};
+function closeCustomMenuAnimation() {
+  const element = document.getElementById("custom-menu") as HTMLElement;
+  element.classList.remove("custom-fade-in");
+  element.classList.add("custom-fade-out");
+
+  setTimeout(() => {
+    element.classList.remove("custom-fade-out");
+    element.classList.add("custom-fade-in");
+    openCustomMenu();
+    const body = document.querySelector("body");
+    body!.style.overflow = "auto";
+  }, 200);
+};
+function isMobile() {
+  window.innerWidth < 1080 ? isMobileProp.value = true : isMobileProp.value = false;
+};
+
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", () => {
+    isMobile();
+  });
+})
+
+onMounted(() => {
+  window.addEventListener("resize", () => {
+    isMobile();
+  });
+})
+
 const links = [
   {
     //string of classes for <i> element
@@ -111,46 +151,4 @@ const links = [
     url: "",
   },
 ];
-</script>
-
-<script lang="ts">
-export default {
-  data() {
-    return {
-      showMenu: false,
-      showCustomMenu: false,
-      showLinkList: false,
-    };
-  },
-  methods: {
-    toggleLinkList() {
-      this.showLinkList = !this.showLinkList;
-    },
-    openCustomMenu() {
-      this.showCustomMenu = !this.showCustomMenu;
-      const body = document.querySelector("body");
-      body!.style.overflow = "hidden";
-    },
-    closeCustomMenuAnimation() {
-      const element = document.getElementById("custom-menu") as HTMLElement;
-      element.classList.remove("custom-fade-in");
-      element.classList.add("custom-fade-out");
-
-      setTimeout(() => {
-        element.classList.remove("custom-fade-out");
-        element.classList.add("custom-fade-in");
-        this.openCustomMenu();
-        const body = document.querySelector("body");
-        body!.style.overflow = "auto";
-      }, 200);
-    },
-    //TODO add an event listiener for a resize event of the window
-    isMobile() {
-      return window.innerWidth < 1080;
-    },
-    toggleNavbar() {
-      this.showMenu = !this.showMenu;
-    },
-  },
-};
 </script>
