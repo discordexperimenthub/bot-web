@@ -6,7 +6,6 @@
       <p class="underline">{{ $t("servers.server") }}</p>
       <div class="font-normal no-underline text-2xl">
         {{ $t("servers.desc", { c: serverString }) }}
-        <span class="text-deh-white bg-deh-main rounded p-[2px] text-xs align-top font-bold">BOT</span>
       </div>
     </div>
     <template v-if="showDetaildServer && dummyMarqueeItems.length > 0">
@@ -46,7 +45,7 @@
 </template>
 
 <script setup lang="ts">
-import { onBeforeMount, ref } from 'vue';
+import { ref } from 'vue';
 
 type marqeeObject = {
   img: string;
@@ -104,7 +103,7 @@ const dummyMarqueeItems: marqeeObject[] = [
   },
 ];
 
-let serverString = "Many";
+let serverString = ref("Many");
 let showDetaildServer = ref(false);
 
 function getPosts() {
@@ -112,15 +111,12 @@ function getPosts() {
     "https://japi.rest/discord/v1/application/1078340529932222505"
   ).then(async (req) => {
     if (req.ok) {
-      serverString = `${((await req.json()) as any).data.bot.approximate_guild_count
-        }`;
+      serverString.value = `${((await req.json()) as any).data.bot.approximate_guild_count}`;
     }
   });
 }
 
-onBeforeMount(() => {
-  getPosts();
-})
+getPosts();
 
 </script>
 

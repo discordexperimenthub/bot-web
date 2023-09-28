@@ -49,8 +49,7 @@
             <div
               class="box-shadow-custom-black text-6xl font-bold text-deh-main bg-neutral-700 rounded p-2 m-1">
               {{ $t("navfoo.title") }}
-              <span
-                class="text-deh-white bg-deh-main rounded p-[2px] px-[3px] text-lg align-top font-bold lg:drop-shadow-[0_2px_20px_rgba(84,97,242,0.5)]">BOT</span>
+            
             </div>
           </span>
           <span class="ml-[35%] text-deh-main text-4xl font-bold p-2 mt-4">
