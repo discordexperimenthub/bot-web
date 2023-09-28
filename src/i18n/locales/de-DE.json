@@ -2,9 +2,18 @@
     "navfoo": {
         "title":"Experiment Hub",
         "support":"Support",
+        "discord":"Discord",
         "invite":"Einladen",
         "github":"GitHub",
-        "docs":"Dokumentation"
+        "docs":"Dokumentation",
+        "appDirectory":"App Verzeichnis",
+        "tos":"Nutzungsbedingungen",
+        "pp":"Datenschutzerklärung",
+        "cr":"Website: © {year} Voroniyx",
+        "crNote":"This website is not affiliated with Discord. All product names, logos, and brands are property of their respective owners.", 
+        "titleSocial":"Soziales",
+        "titleLinks":"Links",
+        "titleImportand":"Wichtiges"
     },
     "servers": {
         "server":"Server",
