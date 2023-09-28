@@ -9,47 +9,41 @@
                     </div>
                 </div>
                 <div class="col-span-1">
-                    <p class="text-white font-medium mt-3 sm:mt-0 sm:mb-3">Links</p>
+                    <p class="text-white font-medium mt-3 sm:mt-0 sm:mb-3 ">{{ $t('navfoo.titleSocial') }}</p>
                     <div>
-                        <a href="https://discord.gg/sj3ZTNn9d7" target="_blank" :class="footerItemCSSClassList">
-                            <i class="fa-brands fa-discord" /> Support Server
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://discord.gg/sj3ZTNn9d7" target="_blank" :class="footerItemCSSClassList">
-                            <i class="fa-brands fa-discord" /> App Directory <!-- TODO -->
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://discord.com/oauth2/authorize?client_id=905083832695398481&permissions=1101726575634&redirect_uri=https%3A%2F%2Fbot.voroniyx.xyz&response_type=code&scope=bot%20applications.commands"
+                        <a href="https://canary.discord.com/api/oauth2/authorize?client_id=1078340529932222505&permissions=536882192&scope=applications.commands%20bot"
                             target="_blank" :class="footerItemCSSClassList">
-                            <i class="fa fa-plus" /> Invite Bot
+                            <i class="fa fa-plus" /> {{ $t('navfoo.invite') }}
+                        </a>
+                    </div>
+                    <div>
+                        <a :class="footerItemCSSClassList" href="https://discord.gg/experiments">
+                            <i class="fa-brands fa-discord" /> {{ $t('navfoo.support') }}
+                        </a>
+                    </div>
+                    <!-- <div>
+                        <a href="https://discord.gg/sj3ZTNn9d7" target="_blank" :class="footerItemCSSClassList">
+                            <i class="fa-brands fa-discord" /> {{ $t('navfoo.appDirectory') }}
+                        </a>
+                    </div> -->
+                    <div>
+                        <a :class="footerItemCSSClassList" href="https://github.com/discordexperimenthub">
+                            <i class="fa-brands fa-github" /> {{ $t('navfoo.github') }}
                         </a>
                     </div>
                 </div>
                 <div class="col-span-1">
-                    <p class="text-white font-medium mt-3 sm:mt-0 sm:mb-3 ">Social</p>
+                    <p class="text-white font-medium mt-3 sm:mt-0 sm:mb-3">{{ $t('navfoo.titleImportand') }}</p>
                     <div>
-                        <a :class="footerItemCSSClassList" :href="urlList.support.url">
-                            <i class="fa-brands fa-discord" /> {{ $t(urlList.support.label) }}
+                        <a :class="footerItemCSSClassList"
+                            href="https://github.com/discordexperimenthub/deh-bot/blob/main/resources/terms-of-service.md">
+                            <i class="fa-solid fa-file-shield" /> {{ $t('navfoo.tos') }}
                         </a>
                     </div>
                     <div>
-                        <a :class="footerItemCSSClassList" href="">
-                            <i class="fa-brands fa-github" /> Github
-                        </a>
-                    </div>
-                </div>
-                <div class="col-span-1" v-if="showImportand()">
-                    <p class="text-white font-medium mt-3 sm:mt-0 sm:mb-3">Important</p>
-                    <div>
-                        <a :class="footerItemCSSClassList" href="https://github.com/discordexperimenthub/deh-bot/blob/main/resources/terms-of-service.md">
-                            <Terms class="fa-solid fa-file-shield" /> Terms of Service
-                        </a>
-                    </div>
-                    <div>
-                        <a :class="footerItemCSSClassList" href="https://github.com/discordexperimenthub/deh-bot/blob/main/resources/privacy-policy.md">
-                            <i class="fa-solid fa-user-shield" /> Privacy Policy
+                        <a :class="footerItemCSSClassList"
+                            href="https://github.com/discordexperimenthub/deh-bot/blob/main/resources/privacy-policy.md">
+                            <i class="fa-solid fa-user-shield" /> {{ $t('navfoo.pp') }}
                         </a>
                     </div>
                 </div>
@@ -58,9 +52,8 @@
                 <p class="sm:text-left"></p>
                 <div class="hidden md:flex items-center justify-center">
                     <p class="text-deh-border text-xs text-center">
-                        Website: © {{ getCopyrightYear() }} Voroniyx <br />
-                        This website is not affiliated with Discord. All product names, logos,
-                        and brands are property of their respective owners.
+                        {{ $t('navfoo.cr', { year: getCopyrightYear() }) }}<br />
+                        {{ $t('navfoo.crNote') }}
                     </p>
                 </div>
             </div>
@@ -69,18 +62,16 @@
 </template>
 
 <script setup lang="ts">
-import urlList from '../../func/url.list.ts'
-
 function getCopyrightYear(): string {
     return new Date().getFullYear() === 2023 ? '2023' : `2023 - ${new Date().getFullYear()}`
 }
 
-const showImportand = () => {
-    return true;
+const showLinks = () => {
+    return false;
 }
 
 const colSpanAmount = () => {
-    return showImportand() ? 'col-span-3' : 'col-span-4'
+    return showLinks() ? 'col-span-3' : 'col-span-4'
 }
 
 const footerItemCSSClassList = '!text-white/50 hover-underline-animation'
