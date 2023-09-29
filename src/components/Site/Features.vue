@@ -108,7 +108,7 @@
 
 <style>
 :deep(.bg-feautes) {
-  background-image: url("../../assets/img/featurelist.svg");
+  background-image: url("../../assets/svg/featurelist.svg");
   background-size: cover;
 }
 

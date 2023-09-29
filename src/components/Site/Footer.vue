@@ -59,6 +59,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- 
+        TODO Add the language switch
+     -->
+
 </template>
 
 <script setup lang="ts">

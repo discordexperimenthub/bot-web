@@ -37,7 +37,7 @@
         <Features />
       </section>
 
-      <img src="../assets/img/footer.top.svg" class="fill-deh-server-slider" />
+      <img src="../assets/svg/footer.top.svg" class="fill-deh-server-slider" />
       <footerNew />
     </main>
   </div>

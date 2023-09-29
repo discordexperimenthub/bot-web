@@ -1,5 +1,5 @@
 <template>
-  <img src="../../assets/img/servers.top.svg" class="fill-deh-server-slider" />
+  <img src="../../assets/svg/servers.top.svg" class="fill-deh-server-slider" />
   <!-- top-10 reltativ -> moves the svg down but i should jsut create a new wave -->
   <section class="w-full bg-deh-server-slider">
     <div class="font-bold text-deh-white text-center text-5xl relative lg:-top-10">
@@ -41,7 +41,7 @@
       </div>
     </template>
   </section>
-  <img src="../../assets/img/servers.bottom.svg" class="fill-deh-server-slider" />
+  <img src="../../assets/svg/servers.bottom.svg" class="fill-deh-server-slider" />
 </template>
 
 <script setup lang="ts">
