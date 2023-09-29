@@ -68,7 +68,43 @@
   box-shadow: 0px 0px 15px 6px rgb(34 33 31);
 }
 
-/* <p class="hover-underline-animation">test</p> */
+/* hover-underline-animation-small */
+.hover-underline-animation-small {
+  display: inline-block;
+  position: relative;
+  color: rgba(84, 97, 242, 1);
+}
+
+.hover-underline-animation-small:hover {
+  cursor: pointer;
+  font-size: 115%;
+  transition: all 0.25s ease-out;
+}
+
+.hover-underline-animation-small:not(:hover) {
+  font-size: 100%;
+  transition: all 0.25s ease-out;
+}
+
+.hover-underline-animation-small::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(84, 97, 242, 1);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation-small:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* hover-underline-animation */
 .hover-underline-animation {
   display: inline-block;
   position: relative;

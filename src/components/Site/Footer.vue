@@ -11,7 +11,7 @@
                 <div class="col-span-1">
                     <p class="text-white font-medium mt-3 sm:mt-0 sm:mb-3 ">{{ $t('navfoo.titleSocial') }}</p>
                     <div>
-                        <a href="https://canary.discord.com/api/oauth2/authorize?client_id=1078340529932222505&permissions=536882192&scope=applications.commands%20bot"
+                        <a href="https://discord.com/api/oauth2/authorize?client_id=1078340529932222505&permissions=536882192&scope=applications.commands%20bot"
                             target="_blank" :class="footerItemCSSClassList">
                             <i class="fa fa-plus" /> {{ $t('navfoo.invite') }}
                         </a>

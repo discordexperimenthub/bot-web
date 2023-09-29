@@ -28,51 +28,73 @@
                   </button>
                 </div>
                 <div class="p-2"></div>
-                <div v-for="link of links">
-                  <div class="text-2xl align-middle my-2">
-                    <i :class="link.icon" class="mr-1" />
-                    <!-- <span v-else><font-awesome-icon :icon="[...link.icons]" /></span> -->
-                    <a :href="link.url" class="hover-underline-animation">{{
-                      $t(link.localCode)
-                    }}</a>
-                  </div>
+                <div>
+                  <a href="https://discord.gg/experiments" class="align-middle my-2 hover-underline-animation-small">
+                    <span class="text-3xl "> <i class="fa-brands fa-discord pr-2" />Support</span>
+                  </a>
+                  <br>
+                  <!-- Close the menu otherwise the scolling would be deactivated -->
+                  <a href="#id_features" @click="closeCustomMenuAnimation"
+                    class="align-middle my-2 hover-underline-animation-small">
+                    <span class="text-3xl "> <i class="fa fa-stars pr-2" /> Features</span>
+                  </a>
+                  <br>
+                  <span class="align-middle my-2 underline underline-offset-4">
+                    <span class="text-3xl "> <i class="fa fa-link pr-2" />Links:</span>
+                  </span>
+                  <br>
+                  <a href="https://discord.com/api/oauth2/authorize?client_id=1078340529932222505&permissions=536882192&scope=applications.commands%20bot"
+                    class="align-middle my-2 hover-underline-animation-small">
+                    <span class="text-xl"> <i class="fa fa-plus" />
+                      Invite
+                    </span>
+                  </a>
+                  <br>
+                  <a href="https://discord.gg/experiments" class="align-middle my-2 hover-underline-animation-small">
+                    <span class="text-xl"> <i class="fab fa-discord" /> Discord </span>
+                  </a>
+                  <br>
+                  <a href="https://discord.gg/experiments" class="align-middle my-2 hover-underline-animation-small">
+                    <span class="text-xl"> <i class="fa-brands fa-github" /> GitHub</span>
+                  </a>
                 </div>
+
               </div>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- Desktop -->
       <div v-else class="px-4 w-full">
-        <div class="m-1 flex">
-          <span class="text-deh-main p-2 mt-4">
-            <div
-              class="box-shadow-custom-black text-6xl font-bold text-deh-main bg-neutral-700 rounded p-2 m-1">
+        <div class="m-1">
+          <span class="text-deh-main p-2 mt-4 inline-flex">
+            <div class="box-shadow-custom-black text-6xl font-bold text-deh-main rounded p-2 pb-4 m-1">
               {{ $t("navfoo.title") }}
-            
             </div>
           </span>
-          <span class="ml-[35%] text-deh-main text-4xl font-bold p-2 mt-4">
-            <a href="#id_servers"
-              class="box-shadow-custom-black hover-underline-animation bg-neutral-700 rounded p-2 m-1 mx-4">
-              Server
+          <span class="ml-[15%] text-deh-main bg-neutral-700 rounded box-shadow-custom-black text-3xl font-bold p-2 mt-4">
+            <a href="https://discord.gg/experiments" class="hover-underline-animation-small p-2 m-1 mx-4">
+              <i class="fa-brands fa-discord" /> Support
             </a>
 
-            <a href="#id_features"
-              class="box-shadow-custom-black hover-underline-animation bg-neutral-700 rounded p-2 m-1 mx-4">
-              Features
+            <a href="#id_features" class="hover-underline-animation-small p-2 m-1 mx-4">
+              <i class="fa fa-stars" /> Features
             </a>
 
-            <div class="dropdown box-shadow-custom-black bg-neutral-700 rounded p-2 m-1 mx-4 cursor-pointer">
-              <span>Links</span>
+            <div class="dropdown  p-2 m-1 mx-4 cursor-pointer">
+              <span class="hover-underline-animation-small"><i class="fa fa-link" /> Links</span>
               <div
-                class="dropdown-content custom-fade-in text-lg mt-2 -left-5 w-36 align-middle text-center bg-deh-server-slider rounded">
-                <a href="" target="_blank" class="m-1 p-1 hover-underline-animation hover:bg-deh-footer rounded"><i
+                class="dropdown-content custom-fade-in text-lg mt-2 left-3 w-36 align-middle text-center bg-deh-server-slider rounded">
+                <a href="https://discord.com/api/oauth2/authorize?client_id=1078340529932222505&permissions=536882192&scope=applications.commands%20bot"
+                  target="_blank" class="m-1 p-1 hover-underline-animation-small hover:bg-deh-footer rounded"><i
                     class="fa fa-plus" />
                   Invite</a>
-                <a href="" target="_blank" class="m-1 p-1 hover-underline-animation hover:bg-deh-footer rounded"><i
-                    class="fab fa-discord" /> Discord</a>
-                <a href="" target="_blank" class="m-1 p-1 hover-underline-animation hover:bg-deh-footer rounded"><i
+                <a href="https://discord.gg/experiments" target="_blank"
+                  class="m-1 p-1 hover-underline-animation-small hover:bg-deh-footer rounded"><i class="fab fa-discord" />
+                  Discord</a>
+                <a href="https://github.com/discordexperimenthub" target="_blank"
+                  class="m-1 p-1 hover-underline-animation-small hover:bg-deh-footer rounded"><i
                     class="fa-brands fa-github" /> GitHub</a>
               </div>
             </div>
@@ -88,6 +110,11 @@ import { ref, onMounted, onBeforeUnmount, onBeforeMount } from 'vue';
 
 const isMobileProp = ref(false);
 const showCustomMenu = ref(false);
+
+//Checks if the desktop navbar items are in the same line or could be cutted of 
+function couldBeNotInSameLine() {
+  return window.innerWidth < 1550;
+}
 
 function openCustomMenu() {
   showCustomMenu.value = !showCustomMenu.value;
@@ -111,38 +138,21 @@ function isMobile() {
   window.innerWidth < 1080 ? isMobileProp.value = true : isMobileProp.value = false;
 };
 
+onBeforeMount(() => {
+  isMobile();
+})
+
 onBeforeUnmount(() => {
   window.removeEventListener("resize", () => {
     isMobile();
   });
 })
 
-onBeforeMount(() => {
-  isMobile();
-})
-
 onMounted(() => {
   window.addEventListener("resize", () => {
     isMobile();
+    if(couldBeNotInSameLine()) isMobileProp.value = true;
   });
 })
 
-const links = [
-  {
-    //string of classes for <i> element
-    icon: 'fa fa-plus',
-    localCode: "navfoo.invite",
-    url: "",
-  },
-  {
-    icon: 'fab fa-discord',
-    localCode: "navfoo.support",
-    url: "",
-  },
-  {
-    icon: 'fa-brands fa-github',
-    localCode: "navfoo.github",
-    url: "",
-  },
-];
 </script>
