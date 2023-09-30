@@ -36,7 +36,7 @@
                   <!-- Close the menu otherwise the scolling would be deactivated -->
                   <a href="#id_features" @click="closeCustomMenuAnimation"
                     class="align-middle my-2 hover-underline-animation-small">
-                    <span class="text-3xl "> <i class="fa fa-stars pr-2" /> Features</span>
+                    <span class="text-3xl "> <i class="fa-solid fa-wand-magic-sparkles pr-2" /> Features</span>
                   </a>
                   <br>
                   <span class="align-middle my-2 underline underline-offset-4">
@@ -79,7 +79,7 @@
             </a>
 
             <a href="#id_features" class="hover-underline-animation-small p-2 m-1 mx-4">
-              <i class="fa fa-stars" /> Features
+              <i class="fa-solid fa-wand-magic-sparkles" /> Features
             </a>
 
             <div class="dropdown  p-2 m-1 mx-4 cursor-pointer">
