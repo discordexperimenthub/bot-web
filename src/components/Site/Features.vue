@@ -54,6 +54,9 @@
       </div>
     </div>
 
+    <!-- 
+     ! Mobile
+     -->
     <div v-else>
       <template v-for="(feature, _) in Feautures">
         <div class="font-bold text-3xl p-4 text-center align-middle">
