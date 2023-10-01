@@ -1,28 +1,32 @@
 <template>
   <div class="m-8">
-    <div
-      class="invisible lg:visible flex justify-center align-middle"
-      v-if="!isMobileProp"
-    >
+    <div class="invisible lg:visible " v-if="!isMobileProp">
+      <section class="w-[100vw] flex justify-center align-middle">
+        <div class="mt-[2.5%] justify-center align-middle">
+          <img src="/automodAi_banner.png" width="720">
+        </div>
+        <Automod class="col-span-1" />
+      </section>
+      <section class="w-[100vw]">
+        <img src="/home_banner.png" width="720">
+        <Home />
+      </section>
+    </div>
+
+    <div class="invisible lg:visible flex justify-center align-middle" v-if="!isMobileProp">
       <div class="lg:w-[75%] w-[95%]">
         <Carousel :autoplay="3500" :wrap-around="true" :items-to-show="1">
           <Slide v-for="(feature, index) in Feautures" :key="index">
             <div
-              class="carousel__item p-8 w-full h-full rounded-lg bg-opacity-40 bg-deh-server-slider backdrop-blur-lg m-2"
-            >
+              class="carousel__item p-8 w-full h-full rounded-lg bg-opacity-40 bg-deh-server-slider backdrop-blur-lg m-2">
               <div class="font-bold text-3xl p-4">
                 <!-- Title -->
-                <img
-                  :src="feature.image.url"
-                  class="inline-flex w-[32px] h-[32px] mt-[0px] mr-1"
-                />
+                <img :src="feature.image.url" class="inline-flex w-[32px] h-[32px] mt-[0px] mr-1" />
                 <span class="underline underline-offset-2 text-white">{{
                   $t(feature.title)
                 }}</span>
-                <span
-                  v-if="feature.beta"
-                  class="text-deh-white bg-deh-main p-[2px] pr-[6px] mx-1 text-start text-base rounded"
-                >
+                <span v-if="feature.beta"
+                  class="text-deh-white bg-deh-main p-[2px] pr-[6px] mx-1 text-start text-base rounded">
                   BETA
                 </span>
               </div>
@@ -61,17 +65,12 @@
       <template v-for="(feature, _) in Feautures">
         <div class="font-bold text-3xl p-4 text-center align-middle">
           <!-- Title -->
-          <img
-            :src="feature.image.url"
-            class="inline-flex w-[32px] h-[32px] mt-[0px] mr-1"
-          />
+          <img :src="feature.image.url" class="inline-flex w-[32px] h-[32px] mt-[0px] mr-1" />
           <span class="underline underline-offset-2 text-white">{{
             $t(feature.title)
           }}</span>
-          <span
-            v-if="feature.beta"
-            class="text-deh-white bg-deh-main p-[2px] pr-[6px] mx-1 text-start text-base rounded align-top"
-          >
+          <span v-if="feature.beta"
+            class="text-deh-white bg-deh-main p-[2px] pr-[6px] mx-1 text-start text-base rounded align-top">
             BETA
           </span>
 
@@ -87,7 +86,9 @@
             <div v-if="feature.component === 'AutoMod'">
               <Automod />
             </div>
-            <div v-else-if="feature.component === 'Home'"><Home /></div>
+            <div v-else-if="feature.component === 'Home'">
+              <Home />
+            </div>
             <div v-else-if="feature.component === 'MsgReminder'">
               <Reminder />
             </div>
@@ -95,11 +96,7 @@
         </template>
         <template v-else>
           <div class="flex justify-center align-middle">
-            <a
-              :href="feature.thumbnail.url"
-              target="_blank"
-              class="flex mt-2 justify-center align-middle"
-            >
+            <a :href="feature.thumbnail.url" target="_blank" class="flex mt-2 justify-center align-middle">
               <img :src="feature.thumbnail.url" class="rounded-xl" />
             </a>
           </div>
