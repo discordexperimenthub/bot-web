@@ -1,14 +1,20 @@
 <template>
   <div class="m-8">
     <div class="invisible lg:visible " v-if="!isMobileProp">
-      <section class="w-[100vw] flex justify-center align-middle">
-        <div class="mt-[2.5%] justify-center align-middle">
-          <img src="/automodAi_banner.png" width="720">
+      <div
+        class="flex-row w-full h-56 my-40 bg-gradient-to-br px-30 from-neutral-900/90 flex items-center justify-start to-neutral-900/50 rounded-lg p-1 shadow-md">
+        <div
+          class="mx-4 p-8 py-16 flex items-center justify-center flex-col lg:w-auto lg:text-left flex-none">
+          <p class="text-3xl text-white font-semibold">News in help command</p>
+          <p class="text-md text-white font-medium line-clamp-5">An Help menu with the newes feed
+            <br />of the Bot replaces unnecessary commands like /news or /changelog
+          </p>
         </div>
-        <Automod class="col-span-1" />
-      </section>
+        <img src="/automodAi_banner.png" id="feature_img_1" width="720"
+          class="block rounded-xl perspective-right shadow-xl shadow-black" />
+      </div>
       <section class="w-[100vw]">
-        <img src="/home_banner.png" width="720">
+        <img src="/home_banner.png" class="coolImage" width="720">
         <Home />
       </section>
     </div>
@@ -128,11 +134,15 @@ import { onMounted, onBeforeUnmount, ref } from "vue";
 import { Carousel, Slide, Navigation, Pagination } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 
+import { mouseImageHoverEffect } from "../../func/mouse-effect";
+
 import Automod from "../discordComponents/automod.vue";
 import Home from "../discordComponents/home.vue";
 import Reminder from "../discordComponents/reminder.vue";
 
 type FeauterComponent = "AutoMod" | "Home" | "MsgReminder";
+
+mouseImageHoverEffect('feature_img_1');
 
 /**
  * Every raw string needs to be a localizationKey except for url
