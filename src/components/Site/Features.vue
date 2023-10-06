@@ -3,20 +3,29 @@
     <div class="invisible lg:visible " v-if="!isMobileProp">
       <div
         class="flex-row w-full h-56 my-40 bg-gradient-to-br px-30 from-neutral-900/90 flex items-center justify-start to-neutral-900/50 rounded-lg p-1 shadow-md">
-        <div
-          class="mx-4 p-8 py-16 flex items-center justify-center flex-col lg:w-auto lg:text-left flex-none">
-          <p class="text-3xl text-white font-semibold">News in help command</p>
-          <p class="text-md text-white font-medium line-clamp-5">An Help menu with the newes feed
-            <br />of the Bot replaces unnecessary commands like /news or /changelog
+        <div class="mx-4 p-8 absolute left-[5%] py-16 flex-col text-center flex-none z-50">
+          <p class="text-3xl text-white font-semibold"><img src="/automod.png"
+              class="inline-flex w-[32px] h-[32px] mt-[0px] mr-1" />
+            <span class="underline underline-offset-2 text-white">{{ $t('feature.automod.title') }}</span>
+          </p>
+          <p class="text-lg text-white font-medium line-clamp-5">{{ $t('feature.automod.desc') }}
           </p>
         </div>
-        <img src="/automodAi_banner.png" id="feature_img_1" width="720"
-          class="block rounded-xl perspective-right shadow-xl shadow-black" />
+        <img src="/automodAi_banner.png" id="feature_img_1" width="556"
+          class="absolute right-[10%] hover:scale-110 transition-all rounded-xl perspective-right shadow-xl shadow-black" />
       </div>
-      <section class="w-[100vw]">
-        <img src="/home_banner.png" class="coolImage" width="720">
-        <Home />
-      </section>
+      <div
+        class="flex-row w-full h-56 my-40 bg-gradient-to-br px-30 from-neutral-900/90 flex items-center justify-start to-neutral-900/50 rounded-lg p-1 shadow-md">
+        <div class="mx-4 p-8 absolute right-[5%] py-16 flex-col text-center flex-none z-50">
+          <p class="text-3xl text-white font-semibold"><img src="/home.svg"
+              class="inline-flex w-[32px] h-[32px] mt-[0px] mr-1" />
+            <span class="underline underline-offset-2 text-white">{{ $t('feature.home.title') }}</span></p>
+          <p class="text-lg text-white font-medium line-clamp-5">{{ $t('feature.home.desc') }}
+          </p>
+        </div>
+        <img src="/home_banner.png" id="feature_img_1" width="556"
+          class="absolute left-[10%] hover:scale-110 transition-all rounded-xl perspective-right shadow-xl shadow-black" />
+      </div>
     </div>
 
     <div class="invisible lg:visible flex justify-center align-middle" v-if="!isMobileProp">
