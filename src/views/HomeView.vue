@@ -44,8 +44,8 @@
 </template>
 
 <script setup lang="ts">
-import NavBar from '../components/site/navbar.vue';
-import Features from '../components/site/features.vue';
-import servers from '../components/site/servers.vue';
-import footerNew from '../components/site/footer.vue';
+import NavBar from '../components/site/NavBar.vue';
+import Features from '../components/site/Features.vue';
+import servers from '../components/site/Servers.vue';
+import footerNew from '../components/site/Footer.vue';
 </script>
