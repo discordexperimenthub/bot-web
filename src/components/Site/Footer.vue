@@ -49,6 +49,7 @@
                 </div>
             </div>
             <div class="mt-10 grid content-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+                <languageSwitch  class="max-w-[150px]"/>
                 <p class="sm:text-left"></p>
                 <div class="hidden md:flex items-center justify-center">
                     <p class="text-deh-border text-xs text-center">
@@ -59,14 +60,11 @@
             </div>
         </div>
     </footer>
-
-    <!-- 
-        TODO Add the language switch
-     -->
-
 </template>
 
 <script setup lang="ts">
+import languageSwitch from '../languageSwitch.vue';
+
 function getCopyrightYear(): string {
     return new Date().getFullYear() === 2023 ? '2023' : `2023 - ${new Date().getFullYear()}`
 }
