@@ -77,6 +77,6 @@ const colSpanAmount = () => {
     return showLinks() ? 'col-span-3' : 'col-span-4'
 }
 
-const footerItemCSSClassList = '!text-white/50 hover-underline-animation'
+const footerItemCSSClassList = '!text-white/50 hover-underline-animation-small'
 
 </script>
