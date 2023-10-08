@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         "deh-main":"rgba(84, 97, 242, 1)",
-        "deh-black":"rgba(0, 0, 0, 0.85)",
+        "deh-black":"rgba(16, 16, 16, 1)",
         "deh-white":"rgba(255, 255, 255, 0.85)",
         "deh-second":"rgba(117, 128, 255, 0.75)",
         "deh-second-hover":"rgba(117, 128, 255, 0.95)",

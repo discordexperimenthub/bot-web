@@ -105,7 +105,6 @@
 
 <style scoped>
 .code-keyword {
-    /* TODO */
     color:#dd7b68; 
 }
 

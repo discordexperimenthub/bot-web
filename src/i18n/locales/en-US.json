@@ -1,9 +1,19 @@
 {
     "navfoo": {
-        "title":"Experiment Hub",
+        "title":"Experiment Hub Bot",
         "support":"Support",
+        "discord":"Discord",
         "invite":"Invite",
-        "docs":"Documentation"
+        "github":"GitHub",
+        "docs":"Documentation",
+        "appDirectory":"App Directory",
+        "tos":"Terms of Service",
+        "pp":"Privacy Policy",
+        "cr":"Website: © {year} Voroniyx",
+        "crNote":"This website is not affiliated with Discord. All product names, logos, and brands are property of their respective owners.",
+        "titleSocial":"Social",
+        "titleLinks":"Links",
+        "titleImportand":"Important"
     },
     "servers": {
         "server":"Servers",

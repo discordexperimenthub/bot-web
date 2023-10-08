@@ -2,73 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.blue {
-  color: rgba(84, 97, 242, 1);
-  text-shadow: 2px 2px 20px rgba(84, 97, 242, 1);
-  animation: flickerAnimation 7s linear 7s infinite;
-}
-
-@keyframes flickerAnimation {
-  0% {
-    opacity: 1;
-  }
-
-  28% {
-    opacity: 1;
-  }
-
-  30% {
-    opacity: 0;
-  }
-
-  32% {
-    opacity: 1;
-  }
-
-  51% {
-    opacity: 1;
-  }
-
-  52% {
-    opacity: 0;
-  }
-
-  53% {
-    opacity: 1;
-  }
-
-  54% {
-    opacity: 0;
-  }
-
-  55% {
-    opacity: 1;
-  }
-
-  80% {
-    opacity: 1;
-  }
-
-  82% {
-    opacity: 0;
-  }
-
-  92% {
-    opacity: 1;
-  }
-
-  97% {
-    opacity: 0.5;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
+/* 
 
 .navbar-ul-item {
   display: flex;
-  gap: 2.5rem;
 }
 
 .navbar-li-item {
@@ -95,10 +32,10 @@
   left: 0;
   width: 100%;
   height: 80px;
-  /* Höhe des Fade-Out-Effekts anpassen */
+  Höhe des Fade-Out-Effekts anpassen
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
   z-index: 0;
-}
+} */
 
 /* width */
 ::-webkit-scrollbar {
@@ -119,5 +56,144 @@
 }
 
 .neon-blue {
-  text-shadow: 0 0 5px rgba(84, 97, 242, 1), 0 0 10px rgba(84, 97, 242, 1), 0 0 15px rgba(84, 97, 242, 1), 0 0 25px rgba(84, 97, 242, 1);
+  text-shadow: 0 0 5px rgba(84, 97, 242, 1), 0 0 10px rgba(84, 97, 242, 1),
+    0 0 15px rgba(84, 97, 242, 1), 0 0 25px rgba(84, 97, 242, 1);
+}
+
+.box-shadow-custom-black {
+  box-shadow: 0px 0px 15px 6px rgb(0, 0, 0);
+}
+
+.box-shadow-custom-grey {
+  box-shadow: 0px 0px 15px 6px rgb(34 33 31);
+}
+
+/* hover-underline-animation-small */
+.hover-underline-animation-small {
+  display: inline-block;
+  position: relative;
+  color: rgba(84, 97, 242, 1);
+}
+
+.hover-underline-animation-small:hover {
+  cursor: pointer;
+  font-size: 115%;
+  transition: all 0.25s ease-out;
+}
+
+.hover-underline-animation-small:not(:hover) {
+  font-size: 100%;
+  transition: all 0.25s ease-out;
+}
+
+.hover-underline-animation-small::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(84, 97, 242, 1);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation-small:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* hover-underline-animation */
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: rgba(84, 97, 242, 1);
+}
+
+.hover-underline-animation:hover {
+  cursor: pointer;
+  font-size: 125%;
+  transition: all 0.25s ease-out;
+}
+
+.hover-underline-animation:not(:hover) {
+  font-size: 100%;
+  transition: all 0.25s ease-out;
+}
+
+.hover-underline-animation::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(84, 97, 242, 1);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.custom-fade-out {
+  animation: fade-out 0.3s ease-in-out;
+}
+
+.custom-fade-in {
+  animation: fade-in 0.3s ease;
+}
+
+@keyframes from-right {
+  from {
+    right: -100%;
+  }
+
+  to {
+    left: 0px;
+  }
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.imageHoverEffect {
+  transform: scale(1.05) rotateY(calc(20deg * var(--image-y) - 10deg)) rotateX(calc(-20deg) * var(--image-x) + 10deg);
 }
