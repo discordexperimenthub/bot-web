@@ -7,8 +7,6 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-package-*
-package-lock.json
 .vite/
 node_modules
 dist
