@@ -145,9 +145,9 @@ import "vue3-carousel/dist/carousel.css";
 
 import { mouseImageHoverEffect } from "../../func/mouse-effect";
 
-import Automod from "../discordComponents/automod.vue";
-import Home from "../discordComponents/home.vue";
-import Reminder from "../discordComponents/reminder.vue";
+import Automod from "../discordComponents/AutomodComponent.vue";
+import Home from "../discordComponents/HomeComponent.vue";
+import Reminder from "../discordComponents/ReminderComponent.vue";
 
 type FeauterComponent = "AutoMod" | "Home" | "MsgReminder";
 

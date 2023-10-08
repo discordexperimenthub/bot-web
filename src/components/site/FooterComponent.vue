@@ -63,7 +63,7 @@
 </template>
 
 <script setup lang="ts">
-import languageSwitch from '../languageSwitch.vue';
+import languageSwitch from '../languageSwitchComponent.vue';
 
 function getCopyrightYear(): string {
     return new Date().getFullYear() === 2023 ? '2023' : `2023 - ${new Date().getFullYear()}`
