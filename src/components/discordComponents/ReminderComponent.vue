@@ -34,7 +34,7 @@
             </code>
         </discord-embed-description>
 
-        <discord-embed-footer slot="footer" footer-image="/logo.png">
+        <discord-embed-footer slot="footer" footer-image="/logo_helloween.png">
           Made with ❤️ by discord.gg/experiments
         </discord-embed-footer>
       </discord-embed>

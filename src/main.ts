@@ -32,7 +32,7 @@ window.$discordMessage = {
     dehBot: {
       bot: true,
       verified: true,
-      avatar: "/logo.png",
+      avatar: "/logo_helloween.png",
       author: "Experiment Hub",
       roleColor: "rgba(84, 97, 242, 1)",
     },
@@ -53,7 +53,7 @@ window.$discordMessage = {
     dehBotWebhook: {
       bot: true,
       verified: false,
-      avatar: "/logo.png",
+      avatar: "/logo_helloween.png",
       author: "Experiment Hub",
       roleColor: "#ffffff",
     },

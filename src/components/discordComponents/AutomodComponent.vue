@@ -69,7 +69,7 @@
         
         </discord-embed-description>
 
-        <discord-embed-footer slot="footer" footer-image="/logo.png">
+        <discord-embed-footer slot="footer" footer-image="/logo_helloween.png">
           {{ $t('feature.automod.component.footer') }}
         </discord-embed-footer>
       </discord-embed>

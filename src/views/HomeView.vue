@@ -5,7 +5,7 @@
       <section class="w-full mb-28 flex flex-col items-center">
         <!-- Landing -->
 
-        <img src="/logo.png" class="w-[75%] lg:w-[25%] m-2 p-2" />
+        <img src="/logo_helloween.png" class="w-[75%] lg:w-[25%] m-2 p-2" />
 
         <div class="p-2 m-1 text-center font-bold text-white ">
           {{ $t("home.description") }}

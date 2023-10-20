@@ -4,7 +4,7 @@
             <div class="lg:grid lg:grid-cols-6 gap-20">
                 <div :class="colSpanAmount()"> <!-- TODO: col-span-4 ohne lega notice  -->
                     <div class="flex items-center space-x-5">
-                        <img src="/logo.png" class="rounded-full w-12" />
+                        <img src="/logo_helloween.png" class="rounded-full w-12" />
                         <p class="font-semibold text-xl text-white">{{ $t('navfoo.title') }}</p>
                     </div>
                 </div>
