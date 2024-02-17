@@ -6,7 +6,7 @@ export default function Home() {
     <RootLayout>
       <div className='min-w-full p-48'>
         <div className='parent lg:justify-center align-middle mt-2 h-[200vh]'>
-          Test
+          Experimenter
         </div>
       </div>
     </RootLayout>

@@ -4,6 +4,7 @@ import { Button } from "../ui/button";
 import { DiscordLogoIcon, GitHubLogoIcon, HeartFilledIcon, InfoCircledIcon, Link1Icon, PlusIcon, SymbolIcon } from "@radix-ui/react-icons";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import ThemeToggle from "./themeToggle";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 export default function NavBar() {
 
@@ -14,6 +15,10 @@ export default function NavBar() {
             <>
                 <div className="min-w-full bg-background fixed">
                     <div className='flex float-start px-24 py-6 text-4xl'>
+                        <Avatar>
+                            <AvatarFallback className='bg-destructive text-xl'>EB</AvatarFallback>
+                            <AvatarImage src={'/favicon.ico'} />
+                        </Avatar>
                         <span className='text-primary transition duration-300 group'>
                             <Link href={'/'}>
                                 Experimenter
